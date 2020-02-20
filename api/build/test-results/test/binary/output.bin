@@ -1,0 +1,12 @@
+9Request URI:	http://api.dev.affise.com/3.0/admin/partner
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+ Form params:	password=esefc52j0
+%				email=jacinto.rogahn@hotmail.com
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		api-key=f87d35d9e7ed3fe153ce95b259133019
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>

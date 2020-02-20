@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    restsAssuredVersion = '4.2.0'
+    testNgVersion = '7.1.0'
+}
+
+dependencies {
+    compile "io.rest-assured:rest-assured:$restsAssuredVersion"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '0.18'
+
+    testCompile "org.testng:testng:$testNgVersion"
+}
+
+test {
+    useTestNG()
+}
