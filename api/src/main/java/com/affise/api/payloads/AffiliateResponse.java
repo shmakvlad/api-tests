@@ -13,7 +13,7 @@ import java.util.List;
 @Accessors(fluent = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.robohorse.robopojogenerator")
-public class Affiliate {
+public class AffiliateResponse {
 
 	@JsonProperty("country")
 	private Object country;
@@ -86,8 +86,5 @@ public class Affiliate {
 
 	@JsonProperty("status")
 	private String status;
-
-	@JsonProperty("password")
-	private String password;
 
 }

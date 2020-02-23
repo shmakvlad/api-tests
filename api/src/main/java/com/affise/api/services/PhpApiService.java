@@ -12,4 +12,9 @@ public class PhpApiService extends Config{
                 .given().spec(phpApiReqSpec);
     }
 
+    public RequestSpecification setUpNewApi(){
+        return RestAssured
+                .given().spec(newPhpApiReqSpec);
+    }
+
 }

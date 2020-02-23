@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.affise.tests.Affiliatess" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-02-23T10:08:52" hostname="192.168.100.5" time="3.208">
+  <properties/>
+  <testcase name="createAffiliatePhp" classname="com.affise.tests.Affiliatess" time="2.321"/>
+  <testcase name="createAffiliatePhpAsSting" classname="com.affise.tests.Affiliatess" time="0.882"/>
+  <system-out><![CDATA[Request URI:	http://api.dev.affise.com/3.0/admin/partner
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	password=fbf4gao7
+				email=maricruz.keeling@gmail.com
+Path params:	<none>
+Multiparts:		<none>
+Headers:		API-KEY=f87d35d9e7ed3fe153ce95b259133019
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+Request URI:	http://api.dev.affise.com/3.0/admin/partner
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	password=95wgip3
+				email=patricia.schoen@gmail.com
+Path params:	<none>
+Multiparts:		<none>
+Headers:		API-KEY=f87d35d9e7ed3fe153ce95b259133019
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

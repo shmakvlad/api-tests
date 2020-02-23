@@ -21,23 +21,39 @@ public class Constans {
         public static String OTHER_API_PATH = "3.1";
     }
 
+    public static class User{
+        public static String ROOT = "f87d35d9e7ed3fe153ce95b259133019";
+        public static String ADMIN = "f87d35d9e7ed3fe153ce95b259133019";
+        public static String AFFILIATE = "f87d35d9e7ed3fe153ce95b259133019";
+        public static String SALES = "f87d35d9e7ed3fe153ce95b259133019";
+    }
+
+    public static class UserType{
+            public static String ROLE_ADMIN = "ROLE_ADMIN";
+            public static String ROLE_MAN_AFFILIATE = "ROLE_MANAGER_AFFILIATE";
+            public static String ROLE_MAN_SALES = "ROLE_MANAGER_SALES";
+    }
+
+    public static class UserPermissions{
+        public static String ENTITY_AFFILIATE = "entity-affiliate";
+        public static String ENTITY_ADVERTISER = "entity-advertiser";
+    }
+
+    public static class UserPermissionsLevel{
+        public static String WRITE = "write";
+        public static String DENY = "deny";
+        public static String READ = "read";
+    }
+
     public static class Headers{
         public static String API_KEY = "API-KEY";
     }
 
-    public static class UserRoles{
-        public String token;
-        public String translation;
-
-        public UserRoles(String token, String translation){
-            this.token = token;
-            this.translation = translation;
-        }
-
-        public static UserRoles ROOT = new UserRoles("5be436c9c29e7936dc78d8a8","ROOT");
-        public static UserRoles ADMIN = new UserRoles("f87d35d9e7ed3fe153ce95b259133019","ADMINISTRATOR");
-        public static UserRoles AFFILIATE = new UserRoles("4bb6760900aaca4969d2f47c5ff0a5c3","AFFILIATE MANAGER");
-        public static UserRoles ACCOUNT = new UserRoles("d194921e05d7662d729c340eeaedc405","ACCOUNT MANAGER");
+    public static class Data{
+        public static String email = "email";
+        public static String password = "password";
+        public static String name = "name";
+        public static String login = "login";
     }
 
 }
