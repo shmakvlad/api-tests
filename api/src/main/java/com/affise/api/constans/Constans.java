@@ -23,7 +23,7 @@ public class Constans {
 
     public static class User{
         public static String ROOT = "f87d35d9e7ed3fe153ce95b259133019";
-        public static String ADMIN = "f87d35d9e7ed3fe153ce95b259133019";
+        public static String ADMIN = "f92b5fbcee3a9ddafb263a65071f921b";
         public static String AFFILIATE = "f87d35d9e7ed3fe153ce95b259133019";
         public static String SALES = "f87d35d9e7ed3fe153ce95b259133019";
     }
@@ -54,6 +54,10 @@ public class Constans {
         public static String password = "password";
         public static String name = "name";
         public static String login = "login";
+        public static String title = "title";
+        public static String manager = "manager";
+        public static String url = "url";
+        public static String skype = "skype";
     }
 
 }

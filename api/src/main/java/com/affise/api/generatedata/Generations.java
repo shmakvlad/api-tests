@@ -29,6 +29,14 @@ public class Generations {
         return faker.name().lastName();
     }
 
+    public static String generateFullName() {
+        return faker.name().fullName();
+    }
+
+    public static String generateUrl() {
+        return faker.internet().url();
+    }
+
     public static String jsonNode(String tree, String jsonPath) throws IOException {
         return objectMapper.readTree(tree).get(jsonPath).toString();
     }
@@ -39,6 +47,8 @@ public class Generations {
         for (String key : list) {
             if (key.equals(email)) map.put(key, generateEmail());
             else if (key.equals(password)) map.put(key, generatePassword());
+            else if (key.equals(url)) map.put(key, generateUrl());
+            else if (key.equals(skype)) map.put(key, generateLastName());
             else map.put(key, generateFirstName());
 
         }

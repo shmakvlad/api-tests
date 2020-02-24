@@ -5,7 +5,6 @@ import com.affise.api.services.UserApiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,7 +34,8 @@ public class GenerateUser {
         return user;
     }
 
-    public static User getNewUser(String usertype) throws IOException {
+    @SneakyThrows
+    public static User getNewUser(String usertype) {
             String json = userApiService.createUser(generateUserWithReqFields(usertype)).asString();
             User user = new ObjectMapper().readValue(jsonNode(json, "user"), User.class);
         return user;
@@ -57,6 +57,15 @@ public class GenerateUser {
     }
 
     public static String changeUserPermException(String permission, String level, String exceptionLevel, Integer id){
+        return "{\"permissions\":{\"users\":{\""
+                + permission + "\":{\"level\":\""
+                + level + "\",\"exceptions\":{\"ints\":{\""
+                + exceptionLevel+ "\":["
+                + id +
+                "]}}}}}}";
+    }
+
+    public static String changeUserPermException(String permission, String level, String exceptionLevel, String id){
         return "{\"permissions\":{\"users\":{\""
                 + permission + "\":{\"level\":\""
                 + level + "\",\"exceptions\":{\"ints\":{\""

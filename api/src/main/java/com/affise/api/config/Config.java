@@ -14,6 +14,8 @@ public class Config {
     public RequestSpecification phpApiReqSpec = new RequestSpecBuilder()
             .setBaseUri(host)
             .setBasePath(apipath)
+//            .addFilter(new RequestLoggingFilter())
+//            .addFilter(new ResponseLoggingFilter())
             .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
             .build();
 

@@ -41,7 +41,6 @@ public class Affiliatess {
                 .shouldHave(bodyField("partner.email", equalTo(affiliate.get("email"))));
     }
 
-
 //    @Positive
 //    @Test(description = "Get Affiliate Object")
 //    public void createAffiliatePhpAsSting() throws IOException {
