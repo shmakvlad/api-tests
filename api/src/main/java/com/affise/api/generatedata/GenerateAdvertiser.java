@@ -40,7 +40,7 @@ public class GenerateAdvertiser {
     @SneakyThrows
     public static Advertiser getNewAdvertiser() {
             String json = advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields()).asString();
-            Advertiser advertiser = new ObjectMapper().readValue(jsonNode(json, "partner"), Advertiser.class);
+            Advertiser advertiser = new ObjectMapper().readValue(jsonNode(json, "advertiser"), Advertiser.class);
         return advertiser;
     }
 

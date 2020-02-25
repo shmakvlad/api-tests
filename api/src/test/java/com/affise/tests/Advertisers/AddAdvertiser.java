@@ -29,7 +29,7 @@ public class AddAdvertiser {
 
     @Positive
     @Test(description = "User with type Administrator and (level == write) can create advertiser")
-    public void adminWriteAdvert() {
+        public void adminWriteAdvert() {
         userApiService.updateUserPermissions(adminUser.id(), changeUserPermission(ENTITY_ADVERTISER, WRITE));
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), adminUser.apiKey())
                .shouldHave(statusCode(200))
@@ -67,7 +67,6 @@ public class AddAdvertiser {
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("advertiser.manager", equalTo(salesUser.id())));
     }
-
 
 
     @Negative

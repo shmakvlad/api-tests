@@ -1,0 +1,521 @@
+6Request URI:	http://api.dev.affise.com/3.0/admin/user
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+"Form params:	password=gqmq3atwu9g
+				last_name=Emmerich
+				first_name=Ronny
+ 				email=seema.yundt@gmail.com
+				roles[]=ROLE_ADMIN
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55295d25c9cf309b48ac84/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "deny",
+                 "exceptions": {
+                    
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=5f3c548975aa4ddebe143417fe397512
+				Accept=*/*
+Body:			<none>
+6Request URI:	http://api.dev.affise.com/3.0/admin/user
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+ Form params:	password=kupbrnu7u
+				last_name=Brakus
+				first_name=Albert
+"				email=russell.walsh@yahoo.com
+#				roles[]=ROLE_MANAGER_AFFILIATE
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55295f25c9cf309b48ac85/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "deny",
+                 "exceptions": {
+                    
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=dae47f452f54ffce87bafe38f35cf8bc
+				Accept=*/*
+Body:			<none>
+6Request URI:	http://api.dev.affise.com/3.0/admin/user
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+!Form params:	password=w51wbp46vq
+				last_name=Ernser
+				first_name=Andrew
+%				email=debbie.witting@hotmail.com
+				roles[]=ROLE_ADMIN
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55296125c9cf309b48ac86/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+"                "level": "write",
+                 "exceptions": {
+!                    "strings": {
+"                        "deny": [
+7                            "5e55295764c5f188ea5344de"
+                        ]
+                    }
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=32f77d5031fbb278c7024a9689d5920b
+				Accept=*/*
+Body:			<none>
+6Request URI:	http://api.dev.affise.com/3.0/admin/user
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+!Form params:	password=59y4ukht90
+				last_name=Batz
+				first_name=Elina
+%				email=jeniffer.corkery@yahoo.com
+				roles[]=ROLE_ADMIN
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55296325c9cf309b48ac87/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "deny",
+                 "exceptions": {
+!                    "strings": {
+"                        "read": [
+7                            "5e55295764c5f188ea5344de"
+                        ]
+                    }
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=563c3ec176e3c33c7f8a4f4ea85dd03f
+				Accept=*/*
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55295a25c9cf309b48ac81/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "read",
+                 "exceptions": {
+                    
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=4fb15dd7b5787be30db24f1320ab0225
+				Accept=*/*
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55295b25c9cf309b48ac82/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "read",
+                 "exceptions": {
+                    
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=ec74b719b89af0237d6f1a3f262f6caa
+				Accept=*/*
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55295c25c9cf309b48ac83/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "read",
+                 "exceptions": {
+                    
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=9491425f406e28360d0a4eb22814e9bf
+				Accept=*/*
+Body:			<none>
+6Request URI:	http://api.dev.affise.com/3.0/admin/user
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+!Form params:	password=56a1zol2mp
+				last_name=Hettinger
+				first_name=Emil
+$				email=shanelle.mraz@hotmail.com
+				roles[]=ROLE_MANAGER_SALES
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55296825c9cf309b48ac88/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "deny",
+                 "exceptions": {
+                    
+                }
+            }
+
+        }
+    }
+}
+URequest URI:	http://api.dev.affise.com/3.0/admin/advertiser/5e55295964c5f188ea5344e0
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+.Form params:	manager=5e55296825c9cf309b48ac88
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=8f561ec5121ba3d8e02434166c98175e
+				Accept=*/*
+Body:			<none>
+6Request URI:	http://api.dev.affise.com/3.0/admin/user
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+ Form params:	password=7amjlj50v
+				last_name=Cruickshank
+				first_name=Greg
+				email=glen.kuhn@gmail.com
+				roles[]=ROLE_ADMIN
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Body:			<none>
+URequest URI:	http://api.dev.affise.com/3.1/user/5e55296a25c9cf309b48ac89/permissions
+Request method:	POST
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+				Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "permissions": {
+        "users": {
+#            "entity-advertiser": {
+!                "level": "deny",
+                 "exceptions": {
+!                    "strings": {
+#                        "write": [
+7                            "5e55295764c5f188ea5344de"
+                        ]
+                    }
+                }
+            }
+
+        }
+    }
+}
+=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+Request method:	GET
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+3Headers:		API-KEY=af6cb5fad4c9dc941fc5e911db7925cb
+				Accept=*/*
+Body:			<none>
+	URequest URI:	http://api.dev.affise.com/3.1/user/5e55295a25c9cf309b48ac81/permissions
+	Request method:	POST
+	Request params:	<none>
+	Query params:	<none>
+	Form params:	<none>
+	Path params:	<none>
+	Multiparts:		<none>
+	3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+					Accept=*/*
+	1				Content-Type=application/json; charset=UTF-8
+	Body:
+	{
+	    "permissions": {
+	        "users": {
+	#            "entity-advertiser": {
+	"                "level": "write",
+	                 "exceptions": {
+	                    
+	                }
+	            }
+	
+        }
+	    }
+	}
+	=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+	Request method:	GET
+	Request params:	<none>
+	Query params:	<none>
+	Form params:	<none>
+	Path params:	<none>
+	Multiparts:		<none>
+	3Headers:		API-KEY=4fb15dd7b5787be30db24f1320ab0225
+					Accept=*/*
+	Body:			<none>
+	URequest URI:	http://api.dev.affise.com/3.1/user/5e55295b25c9cf309b48ac82/permissions
+	Request method:	POST
+	Request params:	<none>
+	Query params:	<none>
+	Form params:	<none>
+	Path params:	<none>
+	Multiparts:		<none>
+	3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+					Accept=*/*
+	1				Content-Type=application/json; charset=UTF-8
+	Body:
+	{
+	    "permissions": {
+	        "users": {
+	#            "entity-advertiser": {
+	"                "level": "write",
+	                 "exceptions": {
+	                    
+	                }
+	            }
+	
+        }
+	    }
+	}
+	=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+	Request method:	GET
+	Request params:	<none>
+	Query params:	<none>
+	Form params:	<none>
+	Path params:	<none>
+	Multiparts:		<none>
+	3Headers:		API-KEY=ec74b719b89af0237d6f1a3f262f6caa
+					Accept=*/*
+	Body:			<none>
+	URequest URI:	http://api.dev.affise.com/3.1/user/5e55295c25c9cf309b48ac83/permissions
+	Request method:	POST
+	Request params:	<none>
+	Query params:	<none>
+	Form params:	<none>
+	Path params:	<none>
+	Multiparts:		<none>
+	3Headers:		API-KEY=b6f5aad864f1cc737b6d2bac20287021
+					Accept=*/*
+	1				Content-Type=application/json; charset=UTF-8
+	Body:
+	{
+	    "permissions": {
+	        "users": {
+	#            "entity-advertiser": {
+	"                "level": "write",
+	                 "exceptions": {
+	                    
+	                }
+	            }
+	
+        }
+	    }
+	}
+	=Request URI:	http://api.dev.affise.com/3.0/admin/advertisers
+	Request method:	GET
+	Request params:	<none>
+	Query params:	<none>
+	Form params:	<none>
+	Path params:	<none>
+	Multiparts:		<none>
+	3Headers:		API-KEY=9491425f406e28360d0a4eb22814e9bf
+					Accept=*/*
+	Body:			<none>

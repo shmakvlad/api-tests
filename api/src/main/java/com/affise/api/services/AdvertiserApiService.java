@@ -27,7 +27,20 @@ public class AdvertiserApiService extends PhpApiService {
         return new AssertableResponse(setUp()
                 .header(API_KEY, usertype)
                 .formParams(advertiser)
-                .when().post("/admin/advertiser{id}", id));
+                .when().post("/admin/advertiser/{id}", id));
+    }
+
+    public AssertableResponse editAdvertiser(String key, Object value, String usertype, String id) {
+        return new AssertableResponse(setUp()
+                .header(API_KEY, usertype)
+                .formParam(key,value)
+                .when().post("/admin/advertiser/{id}", id));
+    }
+
+    public AssertableResponse getListAdvertisers(String usertype) {
+        return new AssertableResponse(setUp()
+                .header(API_KEY, usertype)
+                .when().get("/admin/advertisers"));
     }
 
 }

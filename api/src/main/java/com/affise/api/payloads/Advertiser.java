@@ -76,4 +76,5 @@ public class Advertiser{
 	@JsonProperty("email")
 	private Object email;
 
+
 }

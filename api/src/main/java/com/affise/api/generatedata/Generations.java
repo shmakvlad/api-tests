@@ -47,10 +47,9 @@ public class Generations {
         for (String key : list) {
             if (key.equals(email)) map.put(key, generateEmail());
             else if (key.equals(password)) map.put(key, generatePassword());
-            else if (key.equals(url)) map.put(key, generateUrl());
+            else if (key.equals(url)) map.put(key, "http://offers.dev.com");
             else if (key.equals(skype)) map.put(key, generateLastName());
             else map.put(key, generateFirstName());
-
         }
         return map;
     }

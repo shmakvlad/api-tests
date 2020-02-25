@@ -68,9 +68,9 @@ public class GenerateUser {
     public static String changeUserPermException(String permission, String level, String exceptionLevel, String id){
         return "{\"permissions\":{\"users\":{\""
                 + permission + "\":{\"level\":\""
-                + level + "\",\"exceptions\":{\"ints\":{\""
+                + level + "\",\"exceptions\":{\"strings\":{\""
                 + exceptionLevel+ "\":["
-                + id +
+                + "\"" + id + "\"" +
                 "]}}}}}}";
     }
 }
