@@ -35,7 +35,6 @@ public class GetAdvertiser {
     private final ArrayList<User> users = new ArrayList<User>(Arrays.asList(admin, affiliate, sales));
 
 
-
     @Positive
     @Test(description = "User with (level == write) can get advertiser list")
     public void writeGetAdvert() {
@@ -91,7 +90,7 @@ public class GetAdvertiser {
 
 
     @Negative
-    @Test(description = "Affiliate with (level == deny) can get advertiser list")
+    @Test(description = "Affiliate with (level == deny) can't get advertiser list")
     public void affiliateDenyGetAdvert() {
         User user = getNewUser(ROLE_MAN_AFFILIATE);
         userApiService.updateUserPermissions(user.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));
@@ -99,7 +98,7 @@ public class GetAdvertiser {
                 .shouldHave(statusCode(403));
     }
 
-    @Test(description = "Admin with (level == deny) can get advertiser list")
+    @Test(description = "Admin with (level == deny) can't get advertiser list")
     public void adminDenyGetAdvert() {
         User user = getNewUser(ROLE_ADMIN);
         userApiService.updateUserPermissions(user.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));
@@ -107,7 +106,7 @@ public class GetAdvertiser {
                 .shouldHave(statusCode(403));
     }
 
-    @Test(description = "User with (exception == deny) can get advertiser")
+    @Test(description = "User with (exception == deny) can't get advertiser")
     public void denyExceptGetAdvert() {
         User user = getNewUser();
         userApiService.updateUserPermissions(user.id(), changeUserPermException(ENTITY_ADVERTISER, WRITE, DENY, adv1.id()));

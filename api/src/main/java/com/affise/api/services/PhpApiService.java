@@ -1,8 +1,8 @@
 package com.affise.api.services;
 
+import com.affise.api.config.Config;
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
-import com.affise.api.config.Config;
 
 
 public class PhpApiService extends Config{

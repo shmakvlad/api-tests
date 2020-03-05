@@ -1,44 +1,47 @@
 package com.affise.tests;
 
 import com.affise.api.annotations.Positive;
+import com.affise.api.payloads.AffiliateGoApi;
 import com.affise.api.services.AffiliateApiService;
-import io.restassured.RestAssured;
-import org.testng.annotations.BeforeClass;
+import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.affise.api.conditions.Conditions.bodyField;
-import static com.affise.api.conditions.Conditions.statusCode;
-import static com.affise.api.constans.Constans.Run.host;
-import static com.affise.api.generatedata.Generations.generateEmail;
-import static com.affise.api.generatedata.Generations.generatePassword;
-import static org.hamcrest.Matchers.*;
+import static com.affise.api.conditions.Conditions.*;
+import static com.affise.api.generatedata.Generations.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.Matchers.emptyOrNullString;
+import static org.hamcrest.Matchers.not;
 
 
 public class Affiliatess {
 
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
 
-    @BeforeClass
-    public void setUp() {
-        RestAssured.baseURI = host;
-    }
+//    @BeforeClass
+//    public void setUp() {
+//        RestAssured.baseURI = host;
+//    }
 
     @Positive
-    @Test(description = "User can create affiliate with required fields")
+    @Test(description = "User can create affiliate with required fields", priority = 1)
     public void createAffiliatePhp() {
     // Generate data
         Map<String, Object> affiliate = new HashMap<>();
         affiliate.put("email", generateEmail());
         affiliate.put("password", generatePassword());
+        affiliate.put("login", generateFirstName());
+        affiliate.put("status", "active");
+        System.out.println(affiliate.get("email"));
 
     // Validation assert
         affiliateApiService.createAffiliate(affiliate)
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("partner.id", not(emptyOrNullString())))
-                .shouldHave(bodyField("partner.email", equalTo(affiliate.get("email"))));
+                .shouldHave(bodyField("partner.email", equalTo(affiliate.get("email"))))
+                .shouldHave(bodyContainsAllFields("partner", affiliate));
     }
 
 //    @Positive
@@ -66,21 +69,28 @@ public class Affiliatess {
 //                .asPojo(Affiliate.class);
 //    }
 //
-//    @Positive
-//    @Test(description = "User can create affiliate with required fields")
-//    public void createAffiliateGoapi() {
-//        Affiliate affiliate = new Affiliate()
-//                .email(generateEmail())
-//                .password(generatePassword());
-//
-//        RestAssured
-//                .given().log().all()
-//                .queryParam("client_id", "99999")
-//                .header("Authorization", "Bearer vEGs9PjxGSyF7nhLsuat_TWmv21XR9woPIthTCuAfl0.rpCAPStCu1Z7b_umnzZRo8LOVXZY-T8imfaFxTv0DHg")
-//                .contentType(ContentType.JSON)
-//                .body(affiliate)
-//                .when().post("/affiliates")
-//                .then().statusCode(200).log().status();
-//    }
 
+    @Positive
+    @SneakyThrows
+    @Test(description = "User can create affiliate with required fields")
+    public void createAffiliateGoapi(){
+
+        AffiliateGoApi request = new AffiliateGoApi()
+                .email(generateEmail())
+                .password(generatePassword())
+                .status("active");
+
+//        String json = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(request);
+//
+//        AffiliateGoApi response = RestAssured
+//                .given()
+//                .filter(new ResponseLoggingFilter())
+//                .filter(new RequestLoggingFilter())
+//                .queryParam("client_id", "99999")
+//                .header("Authorization", "Bearer NpzVESQvoVR_kGGvJorbawK412XXAGmTjESkyAm3m-w.td2PINetdUOQxFTM6iwVgL48OitrVWipGfS08ZRMWHU")
+//                .contentType(ContentType.JSON)
+//                .body(request)
+//                .when().post("http://10.201.0.80:58990/4.0/affiliates").as(AffiliateGoApi.class);
+
+    }
 }

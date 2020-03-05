@@ -30,7 +30,10 @@ public class AddAdvertiser {
     @Positive
     @Test(description = "User with type Administrator and (level == write) can create advertiser")
         public void adminWriteAdvert() {
+        // Generate data
         userApiService.updateUserPermissions(adminUser.id(), changeUserPermission(ENTITY_ADVERTISER, WRITE));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), adminUser.apiKey())
                .shouldHave(statusCode(200))
                .shouldHave(bodyField("advertiser.manager", is(emptyOrNullString())));
@@ -38,7 +41,10 @@ public class AddAdvertiser {
 
     @Test(description = "User with type Affiliate and (level == write) can create advertiser")
     public void affiliateWriteAdvert() {
+        // Generate data
         userApiService.updateUserPermissions(affiliateUser.id(), changeUserPermission(ENTITY_ADVERTISER, WRITE));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), affiliateUser.apiKey())
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("advertiser.manager", is(emptyOrNullString())));
@@ -46,7 +52,10 @@ public class AddAdvertiser {
 
     @Test(description = "User with type Account and (level == write) can create advertiser")
     public void salesWriteAdvert() {
+        // Generate data
         userApiService.updateUserPermissions(salesUser.id(), changeUserPermission(ENTITY_ADVERTISER, WRITE));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), salesUser.apiKey())
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("advertiser.manager", is(emptyOrNullString())));
@@ -54,7 +63,10 @@ public class AddAdvertiser {
 
     @Test(description = "User with type Account and (level == read) can create advertiser")
     public void salesReadAdvert() {
+        // Generate data
         userApiService.updateUserPermissions(salesUser.id(), changeUserPermission(ENTITY_ADVERTISER, READ));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), salesUser.apiKey())
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("advertiser.manager", equalTo(salesUser.id())));
@@ -62,7 +74,10 @@ public class AddAdvertiser {
 
     @Test(description = "User with type Account and (level == deny) can create advertiser")
     public void salesDenyAdvert() {
+        // Generate data
         userApiService.updateUserPermissions(salesUser.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), salesUser.apiKey())
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("advertiser.manager", equalTo(salesUser.id())));
@@ -72,28 +87,40 @@ public class AddAdvertiser {
     @Negative
     @Test(description = "User with type Administrator and (level == read) can't create advertiser")
     public void adminReadAdvert() {
+        // Generate data
         userApiService.updateUserPermissions(adminUser.id(), changeUserPermission(ENTITY_ADVERTISER, READ));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), adminUser.apiKey())
                .shouldHave(statusCode(403));
     }
 
     @Test(description = "User with type Administrator and (level == deny) can't create advertiser")
     public void adminDenyAdvert() {
-      userApiService.updateUserPermissions(adminUser.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));
-      advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), adminUser.apiKey())
-              .shouldHave(statusCode(403));
+        // Generate data
+        userApiService.updateUserPermissions(adminUser.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));
+
+        // Validation assert
+        advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), adminUser.apiKey())
+               .shouldHave(statusCode(403));
     }
 
     @Test(description = "User with type Affiliate and (level == read) can create advertiser")
     public void affiliateReadAdvert() {
+        // Generate data
         userApiService.updateUserPermissions(affiliateUser.id(), changeUserPermission(ENTITY_ADVERTISER, READ));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), affiliateUser.apiKey())
                 .shouldHave(statusCode(403));
     }
 
     @Test(description = "User with type Affiliate and (level == deny) can create advertiser")
     public void affiliateDenyAdvert() {
-        userApiService.updateUserPermissions(affiliateUser.id(), changeUserPermission(ENTITY_ADVERTISER, READ));
+        // Generate data
+        userApiService.updateUserPermissions(affiliateUser.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));
+
+        // Validation assert
         advertiserApiService.createAdvertiser(generateAdvertiserWithReqFields(), affiliateUser.apiKey())
                 .shouldHave(statusCode(403));
     }

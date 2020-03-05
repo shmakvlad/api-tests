@@ -6,11 +6,12 @@ import com.github.javafaker.Faker;
 import java.io.IOException;
 import java.util.*;
 
+import static com.affise.api.config.Config.getConfig;
 import static com.affise.api.constans.Constans.Data.*;
 
 public class Generations {
 
-    private static final Faker faker = new Faker(new Locale("en"));
+    private static final Faker faker = new Faker(new Locale(getConfig().locale()));
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static String generateEmail() {

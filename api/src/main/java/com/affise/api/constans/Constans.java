@@ -23,7 +23,7 @@ public class Constans {
 
     public static class User{
         public static String ROOT = "f87d35d9e7ed3fe153ce95b259133019";
-        public static String ADMIN = "b6f5aad864f1cc737b6d2bac20287021";
+        public static String ADMIN = "f20a8d4ed68ea0ea2212791ccf09d75f";
         public static String AFFILIATE = "f87d35d9e7ed3fe153ce95b259133019";
         public static String SALES = "f87d35d9e7ed3fe153ce95b259133019";
     }
