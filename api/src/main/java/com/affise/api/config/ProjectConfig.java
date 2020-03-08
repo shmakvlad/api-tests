@@ -14,7 +14,7 @@ public interface ProjectConfig extends Config {
     @DefaultValue("false")
     Boolean logging();
 
-//    String env();
-//    public static final ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+    @DefaultValue("mongodb://localhost:27017")
+    String mongodb();
 
 }

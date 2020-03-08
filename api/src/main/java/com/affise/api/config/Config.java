@@ -32,7 +32,7 @@ public class Config {
 //            .setConfig(RestAssured.config.decoderConfig(decoderConfig().contentDecoders(DEFLATE, GZIP)))
 //            .setConfig(config().encoderConfig(encoderConfig().defaultContentCharset("US-ASCII")))
 //            .setConfig(config().decoderConfig(decoderConfig().defaultContentCharset("UTF-8")))
-            .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
+//            .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
 //            .addFilter(new ResponseLoggingFilter())
             .build();
 

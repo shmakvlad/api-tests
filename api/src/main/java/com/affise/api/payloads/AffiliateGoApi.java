@@ -83,22 +83,19 @@ public class AffiliateGoApi {
 	}
 
 	@SneakyThrows
-	private static void showAllProps(Object input, Object output){
+	public static boolean showAllProps(Object input, Object output){
 		ArrayList<Field> requestParams = new ArrayList<Field>();
-		List<String> deleteKeys = Arrays.asList("password", "api_key", "log");
+		List<String> deleteKeys = Arrays.asList("api_key", "log", "password");
+		boolean status = true;
 
 		for(Field field: input.getClass().getDeclaredFields()){
 			boolean flag = true;
-				for (String s : deleteKeys){
-					if (field.getName().equals(s) || field.get(input) == null){
-						flag = false;
-						break;
-					}
+			for (String s : deleteKeys){
+					if (field.getName().equals(s) || field.get(input) == null){ flag = false; break; }
 				}
 			if (flag) requestParams.add(field);
 		}
 
-		boolean status = true;
 		for (Field reqField : requestParams){
 			Field resField = output.getClass().getDeclaredField(reqField.getName());
 			if (resField.get(output) == null){
@@ -115,7 +112,7 @@ public class AffiliateGoApi {
 				break;
 			}
 		}
-		System.out.println(status);
+		return status;
 	}
 
 }

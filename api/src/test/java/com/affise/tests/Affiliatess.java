@@ -1,19 +1,29 @@
 package com.affise.tests;
 
 import com.affise.api.annotations.Positive;
+import com.affise.api.payloads.Affiliate;
 import com.affise.api.payloads.AffiliateGoApi;
 import com.affise.api.services.AffiliateApiService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.RestAssured;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import com.affise.api.database.ConnectToMongo
 
 import static com.affise.api.conditions.Conditions.*;
 import static com.affise.api.generatedata.Generations.*;
+import static com.affise.api.payloads.AffiliateGoApi.showAllProps;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.emptyOrNullString;
 import static org.hamcrest.Matchers.not;
+import static org.testng.Assert.assertTrue;
 
 
 public class Affiliatess {
@@ -25,7 +35,7 @@ public class Affiliatess {
 //        RestAssured.baseURI = host;
 //    }
 
-    @Positive
+    @Positive @SneakyThrows
     @Test(description = "User can create affiliate with required fields", priority = 1)
     public void createAffiliatePhp() {
     // Generate data
@@ -34,14 +44,17 @@ public class Affiliatess {
         affiliate.put("password", generatePassword());
         affiliate.put("login", generateFirstName());
         affiliate.put("status", "active");
-        System.out.println(affiliate.get("email"));
+        affiliate.put("custom_fields[1]", "skype");
 
     // Validation assert
-        affiliateApiService.createAffiliate(affiliate)
+        Response partner = affiliateApiService.createAffiliate(affiliate)
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("partner.id", not(emptyOrNullString())))
                 .shouldHave(bodyField("partner.email", equalTo(affiliate.get("email"))))
-                .shouldHave(bodyContainsAllFields("partner", affiliate));
+                .shouldHave(bodyContainsAllFields("partner", affiliate)).getResponse();
+
+        Affiliate affiliateObj = new ObjectMapper().readValue(jsonNode(partner.asString(), "partner"), Affiliate.class);
+        removeAffiliateById(affiliateObj.id());
     }
 
 //    @Positive
@@ -78,19 +91,27 @@ public class Affiliatess {
         AffiliateGoApi request = new AffiliateGoApi()
                 .email(generateEmail())
                 .password(generatePassword())
+                .name(generateFirstName())
+                .affiliateManagerId("507f1f77bcf86cd799439013")
+                .subAccount1("sub1")
+                .subAccount2("sub2")
+                .subAccount1Except(true)
+                .subAccount2Except(false)
                 .status("active");
 
-//        String json = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(request);
-//
-//        AffiliateGoApi response = RestAssured
-//                .given()
-//                .filter(new ResponseLoggingFilter())
-//                .filter(new RequestLoggingFilter())
-//                .queryParam("client_id", "99999")
-//                .header("Authorization", "Bearer NpzVESQvoVR_kGGvJorbawK412XXAGmTjESkyAm3m-w.td2PINetdUOQxFTM6iwVgL48OitrVWipGfS08ZRMWHU")
-//                .contentType(ContentType.JSON)
-//                .body(request)
-//                .when().post("http://10.201.0.80:58990/4.0/affiliates").as(AffiliateGoApi.class);
+        String json = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(request);
+
+        AffiliateGoApi response = RestAssured
+                .given()
+                .filter(new ResponseLoggingFilter())
+                .filter(new RequestLoggingFilter())
+                .queryParam("client_id", "3")
+                .header("Authorization", "Bearer r2zVIsVqOQCTKjb5sSsythrxTOsHmROEIq6zgBfCyh4.ywlE9oPNfZfo_gcGClyT8HKq8swfvBGi5RdRg89liKM")
+                .contentType(ContentType.JSON)
+                .body(request)
+                .when().post("http://10.201.0.80:58990/4.0/affiliates").as(AffiliateGoApi.class);
+
+        assertTrue(showAllProps(request, response));
 
     }
 }

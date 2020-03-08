@@ -1,36 +1,101 @@
-URequest URI:	http://api.dev.affise.com/3.1/user/5e5fce5c81518d445c892737/permissions
 Request method:	POST
+9Request URI:	http://api.dev.affise.com/3.0/admin/partner
+Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
-Form params:	<none>
+Form params:	password=gf4tuup
+				login=Cathern
+#				email=ralph.bergnaum@gmail.com
+				status=active
+				custom_fields[1]=skype
 Path params:	<none>
-Multiparts:		<none>
 3Headers:		API-KEY=f20a8d4ed68ea0ea2212791ccf09d75f
 				Accept=*/*
-1				Content-Type=application/json; charset=UTF-8
-Body:
-{
-    "permissions": {
-        "users": {
-#            "entity-advertiser": {
-"                "level": "write",
-                 "exceptions": {
-                    
-                }
-            }
-
-        }
-    }
-}
-<Request URI:	http://api.dev.affise.com/3.0/admin/advertiser
-Request method:	POST
-Request params:	<none>
-Query params:	<none>
-"Form params:	title=Alonso Murazik
-%				email=velia.stiedemann@yahoo.com
-Path params:	<none>
-Multiparts:		<none>
-3Headers:		API-KEY=71ac9fdd4af00fdc986179e8d40b4c37
-				Accept=*/*
 G				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
 Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx
+$Date: Sun, 08 Mar 2020 08:25:50 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+9Set-Cookie: PHPSESSID=himim02pns9u32s60peup0vkpp; path=/
+Cache-Control: no-cache
+Access-Control-Allow-Origin: *
+6Access-Control-Allow-Methods: GET,POST,OPTIONS,DELETE
+Content-Encoding: gzip
+
+{
+    "status": 1,
+    "partner": {
+        "id": 96,
+-        "created_at": "2020-03-08 11:25:50",
+-        "updated_at": "2020-03-08 11:25:50",
+-        "email": "ralph.bergnaum@gmail.com",
+        "login": "Cathern",
+        "ref_percent": null,
+        "name": null,
+        "notes": "",
+        "manager": null,
+        "status": "active",
+        "level": 0,
+        "payment_systems": [
+            
+        ],
+        "customFields": [
+            {
+!                "name": "Skype",
+"                "value": "skype",
+"                "label": "skype",
+                "id": 1
+            }
+        ],
+        "balance": {
+            "RUB": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            },
+            "USD": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            },
+            "EUR": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            },
+            "BTC": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            }
+        },
+        "offersCount": 0,
+7        "api_key": "5f3714395e44fe7dfbf357e4e33c006f",
+        "address_1": null,
+        "address_2": null,
+        "city": null,
+        "country": null,
+        "zip_code": null,
+        "phone": null,
+        "ref": null,
+        "sub_accounts": [
+            
+
+        ]
+    },
+    "id": 96
+}
+d2020-03-08 11:25:50 INFO  c.a.a.assertions.AssertableResponse - Check condition: status code is 200
+â2020-03-08 11:25:50 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ partner.id ] not (null or an empty string)
+â2020-03-08 11:25:51 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ partner.email ] "ralph.bergnaum@gmail.com"
+“2020-03-08 11:25:51 INFO  c.a.a.assertions.AssertableResponse - Check condition: body fields [ partner ] {password=gf4tuup, login=Cathern, email=ralph.bergnaum@gmail.com, status=active, custom_fields[1]=skype}
+º2020-03-08 11:25:51 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+ç2020-03-08 11:25:51 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:901}] to localhost:27017
+Ö2020-03-08 11:25:51 INFO  org.mongodb.driver.cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+€2020-03-08 11:25:51 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5430636, setName='rs0', canonicalAddress=mongo:27017, hosts=[mongo:27017], passives=[], arbiters=[], primary='mongo:27017', tagSet=TagSet{[]}, electionId=7fffffff000000000000000a, setVersion=1, lastWriteDate=Sun Mar 08 11:25:50 MSK 2020, lastUpdateTimeNanos=82995816224260}
+ç2020-03-08 11:25:51 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:902}] to localhost:27017

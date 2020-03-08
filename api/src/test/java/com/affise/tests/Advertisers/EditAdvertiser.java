@@ -6,6 +6,7 @@ import com.affise.api.payloads.Advertiser;
 import com.affise.api.payloads.User;
 import com.affise.api.services.AdvertiserApiService;
 import com.affise.api.services.UserApiService;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -19,12 +20,23 @@ import static com.affise.api.constans.Constans.User.ADMIN;
 import static com.affise.api.constans.Constans.UserPermissions.ENTITY_ADVERTISER;
 import static com.affise.api.constans.Constans.UserPermissionsLevel.*;
 import static com.affise.api.constans.Constans.UserType.*;
+import static com.affise.api.database.ConnectToMongo.removeObject;
 import static com.affise.api.generatedata.GenerateAdvertiser.getNewAdvertiser;
 import static com.affise.api.generatedata.GenerateUser.*;
 import static com.affise.api.generatedata.Generations.generateMap;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 
 public class EditAdvertiser {
+
+    @AfterClass
+    public void removeData(){
+        removeObject("admin", "suppliers", "_id", advertiser1.id());
+        removeObject("admin", "users", "_id", admin.id());
+        removeObject("admin", "users", "_id", affiliate.id());
+        removeObject("admin", "users", "_id", sales.id());
+        removeObject("admin", "suppliers", "_id", advertiser2.id());
+        removeObject("admin", "suppliers", "_id", ownAdvertiser.id());
+    }
 
     private final AdvertiserApiService advertiserApiService = new AdvertiserApiService();
     private final UserApiService userApiService = new UserApiService();
@@ -36,7 +48,6 @@ public class EditAdvertiser {
     private final User affiliate = getNewUser(ROLE_MAN_AFFILIATE);
     private final User sales = getNewUser(ROLE_MAN_SALES);
     private final ArrayList<User> users = new ArrayList<User>(Arrays.asList(admin,affiliate,sales));
-
 
     @Positive
     @Test(description = "User with (level == write) can edit advertiser")

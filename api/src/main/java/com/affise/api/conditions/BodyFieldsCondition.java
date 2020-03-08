@@ -19,7 +19,7 @@ public class BodyFieldsCondition implements Condition {
 
     private final String jsonPath;
     private final Map requestBody;
-    private final List<String> deleteKeys = Arrays.asList("password", "api_key");
+    private final List<String> deleteKeys = Arrays.asList("password", "api_key", "custom_fields[1]");
 
 
     @SneakyThrows
