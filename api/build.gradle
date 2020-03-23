@@ -23,7 +23,8 @@ dependencies {
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     compile group: 'org.aeonbits.owner', name: 'owner-java8', version: '1.0.10'
     compile 'org.mongodb:mongodb-driver-sync:4.0.0'
-    
+    compile 'org.assertj:assertj-core:3.11.1'
+    compile 'mysql:mysql-connector-java:8.0.19'
     testCompile "org.testng:testng:$testNgVersion"
 }
 

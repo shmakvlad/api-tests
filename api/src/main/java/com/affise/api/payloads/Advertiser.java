@@ -68,7 +68,7 @@ public class Advertiser{
 	private List<Object> disallowedIp;
 
 	@JsonProperty("manager_obj")
-	private String managerObj;
+	private Object managerObj;
 
 	@JsonProperty("id")
 	private String id;

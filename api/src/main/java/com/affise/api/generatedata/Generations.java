@@ -35,7 +35,7 @@ public class Generations {
     }
 
     public static String generateUrl() {
-        return faker.internet().url();
+        return "http://" + faker.internet().url();
     }
 
     public static String jsonNode(String tree, String jsonPath) throws IOException {

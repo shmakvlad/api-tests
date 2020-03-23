@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.affise.api.generatedata.Generations.generateEmail;
-import static com.affise.api.generatedata.Generations.generatePassword;
-
 
 @Slf4j
 @Getter
@@ -69,18 +66,6 @@ public class AffiliateGoApi {
 
 	@JsonProperty("status")
 	private String status;
-
-	public static void main(String[] args) {
-		AffiliateGoApi request = new AffiliateGoApi()
-				.email(generateEmail())
-				.password(generatePassword());
-
-		AffiliateGoApi response = new AffiliateGoApi()
-				.email(generateEmail())
-				.password(generatePassword());
-
-		showAllProps(request, response);
-	}
 
 	@SneakyThrows
 	public static boolean showAllProps(Object input, Object output){

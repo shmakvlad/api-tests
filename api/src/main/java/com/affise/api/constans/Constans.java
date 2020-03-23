@@ -23,7 +23,7 @@ public class Constans {
 
     public static class User{
         public static String ROOT = "f87d35d9e7ed3fe153ce95b259133019";
-        public static String ADMIN = "f20a8d4ed68ea0ea2212791ccf09d75f";
+        public static String ADMIN = "e8abca64a06e36ed954ffa8b45d7887e";
         public static String AFFILIATE = "f87d35d9e7ed3fe153ce95b259133019";
         public static String SALES = "f87d35d9e7ed3fe153ce95b259133019";
     }
@@ -47,6 +47,14 @@ public class Constans {
 
     public static class Headers{
         public static String API_KEY = "API-KEY";
+    }
+
+    public static class DatabaseNames{
+        public static String LOCAL_DB = "admin";
+    }
+
+    public static class PermissionsLevel{
+        public static String ENTITY_ADVERTISER_LEVEL = "scopes.users.entity-advertiser.level";
     }
 
     public static class Data{

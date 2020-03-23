@@ -1,0 +1,6599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.affise.tests.Offers.GetOffer" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-23T14:33:49" hostname="shmakovs-mbp" time="4.742">
+  <properties/>
+  <testcase name="userWriteExceptionDeny" classname="com.affise.tests.Offers.GetOffer" time="4.742"/>
+  <system-out><![CDATA[2020-03-23 17:33:49 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:362}] to localhost:27017
+Request method:	GET
+Request URI:	http://api.dev.affise.com/3.0/offers
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		API-KEY=954bd1c9e4a83d1f87226dad55eabd3e
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 23 Mar 2020 14:33:50 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: PHPSESSID=daqkvkbrpt2h8g8p59ttjq2fn8; path=/
+Cache-Control: no-cache
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,POST,OPTIONS,DELETE
+Content-Encoding: gzip
+
+{
+    "status": 1,
+    "offers": [
+        {
+            "id": 85,
+            "offer_id": "5e735dbfde6519001749f597",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 14:55:43",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 14:55:43",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 89,
+            "offer_id": "5e736381de651900121dfb9d",
+            "advertiser": "5e73637c6ec8455bfae9f753",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:20:17",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:20:17",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 92,
+            "offer_id": "5e73651fde6519001343a0a7",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:27:10",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:27:10",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 94,
+            "offer_id": "5e736666de65190014371971",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:32:37",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:32:37",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 95,
+            "offer_id": "5e73670dde651900162264bc",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:35:25",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:35:25",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 97,
+            "offer_id": "5e736730de65190014371975",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "protected",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": true,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:36:00",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:18:25",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 99,
+            "offer_id": "5e7368a7de65190014371979",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "protected",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": true,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:42:15",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:25:40",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 101,
+            "offer_id": "5e736956de6519001437197d",
+            "advertiser": "5e7363126ec8455bfae9f752",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "private",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:45:10",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:26:15",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 102,
+            "offer_id": "5e736995de651900162264c1",
+            "advertiser": "5e73698c6ec8455bfae9f756",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:46:13",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:46:13",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 126,
+            "offer_id": "5e74d74dde651900141da9d3",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-20 17:46:34",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 17:46:34",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 127,
+            "offer_id": "5e74d778de65190012073373",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-20 17:47:20",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 17:47:20",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 171,
+            "offer_id": "5e78c8cade651900100d5a2f",
+            "advertiser": "5e78c8c6df7fd02c7c88e553",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Wesley",
+            "macro_url": "",
+            "url": "http://www.ashley-murray.biz",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:46",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:46",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 172,
+            "offer_id": "5e78c8cbde65190014341570",
+            "advertiser": "5e78c8c7df7fd02c7c88e554",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Suzy",
+            "macro_url": "",
+            "url": "http://www.constance-little.info",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:47",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:47",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 173,
+            "offer_id": "5e78c8cdde65190015611141",
+            "advertiser": "5e78c8c9df7fd02c7c88e555",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Amberly",
+            "macro_url": "",
+            "url": "http://www.denisha-lang.net",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:49",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:49",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        }
+    ],
+    "pagination": {
+        "per_page": 100,
+        "total_count": 14,
+        "page": 1
+    }
+}
+2020-03-23 17:33:50 INFO  c.a.a.assertions.AssertableResponse - Check condition: status code is 200
+2020-03-23 17:33:50 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ offers.id ] (a collection containing <171> and a collection containing <172> and a collection containing <173>)
+2020-03-23 17:33:51 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ offers.id ] not (a collection containing <170>)
+Request method:	GET
+Request URI:	http://api.dev.affise.com/3.0/offers
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		API-KEY=edb3cedb28db3d02c599fbf22dfdbf5e
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 23 Mar 2020 14:33:52 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: PHPSESSID=quddki262nt2qfb3sefu1vkeu9; path=/
+Cache-Control: no-cache
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,POST,OPTIONS,DELETE
+Content-Encoding: gzip
+
+{
+    "status": 1,
+    "offers": [
+        {
+            "id": 85,
+            "offer_id": "5e735dbfde6519001749f597",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 14:55:43",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 14:55:43",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 89,
+            "offer_id": "5e736381de651900121dfb9d",
+            "advertiser": "5e73637c6ec8455bfae9f753",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:20:17",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:20:17",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 92,
+            "offer_id": "5e73651fde6519001343a0a7",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:27:10",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:27:10",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 94,
+            "offer_id": "5e736666de65190014371971",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:32:37",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:32:37",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 95,
+            "offer_id": "5e73670dde651900162264bc",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:35:25",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:35:25",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 97,
+            "offer_id": "5e736730de65190014371975",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "protected",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": true,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:36:00",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:18:25",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 99,
+            "offer_id": "5e7368a7de65190014371979",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "protected",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": true,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:42:15",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:25:40",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 101,
+            "offer_id": "5e736956de6519001437197d",
+            "advertiser": "5e7363126ec8455bfae9f752",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "private",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:45:10",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:26:15",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 102,
+            "offer_id": "5e736995de651900162264c1",
+            "advertiser": "5e73698c6ec8455bfae9f756",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:46:13",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:46:13",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 126,
+            "offer_id": "5e74d74dde651900141da9d3",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-20 17:46:34",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 17:46:34",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 127,
+            "offer_id": "5e74d778de65190012073373",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-20 17:47:20",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 17:47:20",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 171,
+            "offer_id": "5e78c8cade651900100d5a2f",
+            "advertiser": "5e78c8c6df7fd02c7c88e553",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Wesley",
+            "macro_url": "",
+            "url": "http://www.ashley-murray.biz",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:46",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:46",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 172,
+            "offer_id": "5e78c8cbde65190014341570",
+            "advertiser": "5e78c8c7df7fd02c7c88e554",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Suzy",
+            "macro_url": "",
+            "url": "http://www.constance-little.info",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:47",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:47",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 173,
+            "offer_id": "5e78c8cdde65190015611141",
+            "advertiser": "5e78c8c9df7fd02c7c88e555",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Amberly",
+            "macro_url": "",
+            "url": "http://www.denisha-lang.net",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:49",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:49",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        }
+    ],
+    "pagination": {
+        "per_page": 100,
+        "total_count": 14,
+        "page": 1
+    }
+}
+2020-03-23 17:33:52 INFO  c.a.a.assertions.AssertableResponse - Check condition: status code is 200
+2020-03-23 17:33:52 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ offers.id ] (a collection containing <171> and a collection containing <172> and a collection containing <173>)
+2020-03-23 17:33:52 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ offers.id ] not (a collection containing <170>)
+Request method:	GET
+Request URI:	http://api.dev.affise.com/3.0/offers
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		API-KEY=c31fc1a98db1dc5e5ab0c9d4e51bc861
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 23 Mar 2020 14:33:53 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: PHPSESSID=8s5cp4fp6guhcjo3c8om55hqk8; path=/
+Cache-Control: no-cache
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,POST,OPTIONS,DELETE
+Content-Encoding: gzip
+
+{
+    "status": 1,
+    "offers": [
+        {
+            "id": 85,
+            "offer_id": "5e735dbfde6519001749f597",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 14:55:43",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 14:55:43",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 89,
+            "offer_id": "5e736381de651900121dfb9d",
+            "advertiser": "5e73637c6ec8455bfae9f753",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:20:17",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:20:17",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 92,
+            "offer_id": "5e73651fde6519001343a0a7",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:27:10",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:27:10",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 94,
+            "offer_id": "5e736666de65190014371971",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:32:37",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:32:37",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 95,
+            "offer_id": "5e73670dde651900162264bc",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:35:25",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:35:25",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 97,
+            "offer_id": "5e736730de65190014371975",
+            "advertiser": "5e7363996ec8455bfae9f754",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "protected",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": true,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:36:00",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:18:25",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 99,
+            "offer_id": "5e7368a7de65190014371979",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "protected",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": true,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:42:15",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:25:40",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 101,
+            "offer_id": "5e736956de6519001437197d",
+            "advertiser": "5e7363126ec8455bfae9f752",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "private",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:45:10",
+            "sub_accounts": {
+                "1": {
+                    "value": "",
+                    "except": 0
+                },
+                "2": {
+                    "value": "",
+                    "except": 0
+                }
+            },
+            "disabled_by": "",
+            "kpi": {
+                "ru": "",
+                "en": "",
+                "es": "",
+                "ka": "",
+                "vi": "",
+                "my": "",
+                "pt": ""
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 18:26:15",
+            "caps_goal_overcap": "",
+            "targeting": [
+                {
+                    "country": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "region": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "city": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "os": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "isp": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "ip": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "browser": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "brand": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ]
+                    },
+                    "device_type": [
+                        
+                    ],
+                    "connection": [
+                        
+                    ],
+                    "affiliate_id": [
+                        
+                    ],
+                    "sub": {
+                        "allow": [
+                            
+                        ],
+                        "deny": [
+                            
+                        ],
+                        "deny_groups": [
+                            
+                        ]
+                    }
+                }
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 102,
+            "offer_id": "5e736995de651900162264c1",
+            "advertiser": "5e73698c6ec8455bfae9f756",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-19 15:46:13",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-19 15:46:13",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 126,
+            "offer_id": "5e74d74dde651900141da9d3",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-20 17:46:34",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 17:46:34",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 127,
+            "offer_id": "5e74d778de65190012073373",
+            "advertiser": "5e735cff6ec8455bfae9f750",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Hello 3",
+            "macro_url": "",
+            "url": "http://www.raelene-schuster.com",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-20 17:47:20",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-20 17:47:20",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 171,
+            "offer_id": "5e78c8cade651900100d5a2f",
+            "advertiser": "5e78c8c6df7fd02c7c88e553",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Wesley",
+            "macro_url": "",
+            "url": "http://www.ashley-murray.biz",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:46",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:46",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 172,
+            "offer_id": "5e78c8cbde65190014341570",
+            "advertiser": "5e78c8c7df7fd02c7c88e554",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Suzy",
+            "macro_url": "",
+            "url": "http://www.constance-little.info",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:47",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:47",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        },
+        {
+            "id": 173,
+            "offer_id": "5e78c8cdde65190015611141",
+            "advertiser": "5e78c8c9df7fd02c7c88e555",
+            "external_offer_id": "",
+            "hide_payments": false,
+            "title": "Amberly",
+            "macro_url": "",
+            "url": "http://www.denisha-lang.net",
+            "url_preview": "",
+            "preview_url": "",
+            "domain_url": "dev.go2affise.com",
+            "trafficback_url": "",
+            "cross_postback_url": "",
+            "use_https": false,
+            "use_http": true,
+            "description_lang": {
+                
+            },
+            "sources": [
+                
+            ],
+            "logo": "",
+            "logo_source": "",
+            "status": "active",
+            "tags": [
+                
+            ],
+            "privacy": "public",
+            "is_top": 0,
+            "payments": [
+                {
+                    "countries": [
+                        
+                    ],
+                    "cities": [
+                        
+                    ],
+                    "devices": [
+                        
+                    ],
+                    "os": [
+                        
+                    ],
+                    "goal": "1",
+                    "revenue": 0,
+                    "currency": "usd",
+                    "title": "",
+                    "type": "fixed",
+                    "country_exclude": false,
+                    "total": 0,
+                    "with_regions": false,
+                    "url": null,
+                    "sub1": null,
+                    "sub2": null,
+                    "sub3": null,
+                    "sub4": null,
+                    "sub5": null,
+                    "sub6": null,
+                    "sub7": null,
+                    "sub8": null
+                }
+            ],
+            "partner_payments": [
+                
+            ],
+            "landings": [
+                
+            ],
+            "strictly_country": 0,
+            "strictly_os": [
+                
+            ],
+            "strictly_brands": [
+                
+            ],
+            "strictly_connection_type": null,
+            "restriction_isp": null,
+            "is_redirect_overcap": false,
+            "notice_percent_overcap": 0,
+            "hold_period": 0,
+            "categories": [
+                
+            ],
+            "full_categories": [
+                
+            ],
+            "cr": 0,
+            "epc": 0,
+            "notes": "",
+            "allowed_ip": "",
+            "disallowed_ip": "",
+            "hash_password": "",
+            "allow_deeplink": false,
+            "hide_referer": false,
+            "start_at": "",
+            "stop_at": "",
+            "auto_offer_connect": 0,
+            "required_approval": false,
+            "is_cpi": false,
+            "creatives": [
+                
+            ],
+            "creatives_zip": null,
+            "created_at": "2020-03-23 17:33:49",
+            "sub_accounts": [
+                
+            ],
+            "disabled_by": "",
+            "kpi": {
+                
+            },
+            "strictly_isp": [
+                
+            ],
+            "caps": [
+                
+            ],
+            "updated_at": "2020-03-23 17:33:49",
+            "caps_goal_overcap": "",
+            "targeting": [
+                
+            ],
+            "commission_tiers": [
+                
+            ],
+            "enabled_commission_tiers": false,
+            "allow_impressions": false,
+            "smartlink_categories": [
+                
+            ]
+        }
+    ],
+    "pagination": {
+        "per_page": 100,
+        "total_count": 14,
+        "page": 1
+    }
+}
+2020-03-23 17:33:53 INFO  c.a.a.assertions.AssertableResponse - Check condition: status code is 200
+2020-03-23 17:33:53 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ offers.id ] (a collection containing <171> and a collection containing <172> and a collection containing <173>)
+2020-03-23 17:33:53 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ offers.id ] not (a collection containing <170>)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

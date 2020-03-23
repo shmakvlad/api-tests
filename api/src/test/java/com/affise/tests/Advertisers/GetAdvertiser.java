@@ -90,7 +90,7 @@ public class GetAdvertiser {
 
 
     @Negative
-    @Test(description = "Affiliate with (level == deny) can't get advertiser list")
+    @Test(description = "Affiliates with (level == deny) can't get advertiser list")
     public void affiliateDenyGetAdvert() {
         User user = getNewUser(ROLE_MAN_AFFILIATE);
         userApiService.updateUserPermissions(user.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));

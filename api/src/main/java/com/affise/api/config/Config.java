@@ -46,7 +46,7 @@ public class Config {
             .setBasePath(otherApiPath)
             .setContentType(ContentType.JSON)
             .addFilters(getFilters())
-            .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
+//            .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
             .build();
 
     private List<Filter> getFilters(){

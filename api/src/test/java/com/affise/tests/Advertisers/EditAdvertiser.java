@@ -2,6 +2,7 @@ package com.affise.tests.Advertisers;
 
 import com.affise.api.annotations.Negative;
 import com.affise.api.annotations.Positive;
+import com.affise.api.database.ConnectToMongo;
 import com.affise.api.payloads.Advertiser;
 import com.affise.api.payloads.User;
 import com.affise.api.services.AdvertiserApiService;
@@ -20,7 +21,6 @@ import static com.affise.api.constans.Constans.User.ADMIN;
 import static com.affise.api.constans.Constans.UserPermissions.ENTITY_ADVERTISER;
 import static com.affise.api.constans.Constans.UserPermissionsLevel.*;
 import static com.affise.api.constans.Constans.UserType.*;
-import static com.affise.api.database.ConnectToMongo.removeObject;
 import static com.affise.api.generatedata.GenerateAdvertiser.getNewAdvertiser;
 import static com.affise.api.generatedata.GenerateUser.*;
 import static com.affise.api.generatedata.Generations.generateMap;
@@ -28,26 +28,19 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class EditAdvertiser {
 
-    @AfterClass
-    public void removeData(){
-        removeObject("admin", "suppliers", "_id", advertiser1.id());
-        removeObject("admin", "users", "_id", admin.id());
-        removeObject("admin", "users", "_id", affiliate.id());
-        removeObject("admin", "users", "_id", sales.id());
-        removeObject("admin", "suppliers", "_id", advertiser2.id());
-        removeObject("admin", "suppliers", "_id", ownAdvertiser.id());
-    }
-
     private final AdvertiserApiService advertiserApiService = new AdvertiserApiService();
     private final UserApiService userApiService = new UserApiService();
+    private final ConnectToMongo connectToMongo = new ConnectToMongo();
+
     private final Advertiser advertiser1 = getNewAdvertiser();
     private final Advertiser advertiser2 = getNewAdvertiser();
     private final Advertiser ownAdvertiser = getNewAdvertiser();
     private final Map advertBody = generateMap(email, url, skype);
+
     private final User admin = getNewUser(ROLE_ADMIN);
     private final User affiliate = getNewUser(ROLE_MAN_AFFILIATE);
     private final User sales = getNewUser(ROLE_MAN_SALES);
-    private final ArrayList<User> users = new ArrayList<User>(Arrays.asList(admin,affiliate,sales));
+    private final ArrayList<User> users = new ArrayList<User>(Arrays.asList(admin, affiliate, sales));
 
     @Positive
     @Test(description = "User with (level == write) can edit advertiser")
@@ -120,19 +113,25 @@ public class EditAdvertiser {
     @Test(description = "User with (exception == read) can't edit advertiser")
     public void readException() {
         User user = getNewUser();
+
         userApiService.updateUserPermissions(user.id(), changeUserPermException(ENTITY_ADVERTISER, DENY, READ, advertiser2.id()))
                 .shouldHave(statusCode(200));
         advertiserApiService.editAdvertiser(advertBody, user.apiKey(), advertiser2.id())
                 .shouldHave(statusCode(403));
+
+        connectToMongo.removeObject("admin", "users", "_id", user.id());
     }
 
     @Test(description = "User with (exception == deny) can't edit advertiser")
     public void denyException() {
         User user = getNewUser();
+
         userApiService.updateUserPermissions(user.id(), changeUserPermException(ENTITY_ADVERTISER, WRITE, DENY, advertiser2.id()))
                 .shouldHave(statusCode(200));
         advertiserApiService.editAdvertiser(advertBody, user.apiKey(), advertiser2.id())
                 .shouldHave(statusCode(403));
+
+        connectToMongo.removeObject("admin", "users", "_id", user.id());
     }
 
     @Test(description = "Administrator can't edit own advertiser")
@@ -147,7 +146,7 @@ public class EditAdvertiser {
                 .shouldHave(statusCode(403));
     }
 
-    @Test(description = "Affiliate can't edit own advertiser")
+    @Test(description = "Affiliates can't edit own advertiser")
     public void affiliateEditOwnAdvert() {
         advertiserApiService.editAdvertiser(manager, affiliate.id(), ADMIN, ownAdvertiser.id())
                 .shouldHave(statusCode(200));
@@ -157,6 +156,17 @@ public class EditAdvertiser {
 
         advertiserApiService.editAdvertiser(advertBody, affiliate.apiKey(), ownAdvertiser.id())
                 .shouldHave(statusCode(403));
+    }
+
+    @AfterClass
+    public void removeData(){
+        connectToMongo.removeObject("admin", "suppliers", "_id", advertiser1.id());
+        connectToMongo.removeObject("admin", "users", "_id", admin.id());
+        connectToMongo.removeObject("admin", "users", "_id", affiliate.id());
+        connectToMongo.removeObject("admin", "users", "_id", sales.id());
+        connectToMongo.removeObject("admin", "suppliers", "_id", advertiser2.id());
+        connectToMongo.removeObject("admin", "suppliers", "_id", ownAdvertiser.id());
+        connectToMongo.closeConnection();
     }
 
 }

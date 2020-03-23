@@ -17,4 +17,11 @@ public interface ProjectConfig extends Config {
     @DefaultValue("mongodb://localhost:27017")
     String mongodb();
 
+    @DefaultValue("mongodb://localhost:27017")
+    String mongodbCentralUsers();
+
+    String mysqlUrl();
+    String mysqlPassword();
+    String mysqlUser();
+
 }

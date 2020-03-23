@@ -1,8 +1,11 @@
 package com.affise.tests;
 
 import com.affise.api.annotations.Positive;
+import com.affise.api.database.ConnectToMongo;
+import com.affise.api.database.ConnectToMySql;
 import com.affise.api.payloads.Affiliate;
 import com.affise.api.payloads.AffiliateGoApi;
+import com.affise.api.payloads.Affiliates.Affiliates;
 import com.affise.api.services.AffiliateApiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
@@ -11,11 +14,12 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import lombok.SneakyThrows;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
-import com.affise.api.database.ConnectToMongo
 
 import static com.affise.api.conditions.Conditions.*;
 import static com.affise.api.generatedata.Generations.*;
@@ -29,15 +33,21 @@ import static org.testng.Assert.assertTrue;
 public class Affiliatess {
 
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
+    private final ConnectToMongo connectToMongo = setUp();
+    private final ConnectToMySql connectToMySql = new ConnectToMySql();
 
-//    @BeforeClass
-//    public void setUp() {
-//        RestAssured.baseURI = host;
-//    }
+
+
+    @BeforeClass
+    public ConnectToMongo setUp(){
+        return new ConnectToMongo();
+    }
+
 
     @Positive @SneakyThrows
     @Test(description = "User can create affiliate with required fields", priority = 1)
     public void createAffiliatePhp() {
+
     // Generate data
         Map<String, Object> affiliate = new HashMap<>();
         affiliate.put("email", generateEmail());
@@ -54,37 +64,14 @@ public class Affiliatess {
                 .shouldHave(bodyContainsAllFields("partner", affiliate)).getResponse();
 
         Affiliate affiliateObj = new ObjectMapper().readValue(jsonNode(partner.asString(), "partner"), Affiliate.class);
-        removeAffiliateById(affiliateObj.id());
+
+    // Clean data
+        connectToMongo.removeAffiliateById(affiliateObj.id());
+        connectToMySql.deleteAffiliateFromMySql(affiliateObj.id());
     }
 
-//    @Positive
-//    @Test(description = "Get Affiliate Object")
-//    public void createAffiliatePhpAsSting() throws IOException {
-//    // Generate data
-//        Map<String, Object> affiliate = new HashMap<>();
-//        affiliate.put("email", generateEmail());
-//        affiliate.put("password", generatePassword());
-//
-//    // Validation assert
-//        String json = affiliateApiService.createAffiliate(affiliate).getResponse().asString();
-//        AffiliateResponse aff = new ObjectMapper().readValue(new ObjectMapper().readTree(json).get("partner").toString(), AffiliateResponse.class);
-//    }
 
-//    @Positive
-//    @Test(description = "Get partner as pogo")
-//    public void getAffiliateAsPogo() {
-//        // Generate data
-//        Map body = generateMap(email, password);
-//
-//        // Validation assert
-//        Affiliate affiliate = affiliateApiService.createAffiliate(body)
-//                .shouldHave(statusCode(200))
-//                .asPojo(Affiliate.class);
-//    }
-//
-
-    @Positive
-    @SneakyThrows
+    @Positive @SneakyThrows
     @Test(description = "User can create affiliate with required fields")
     public void createAffiliateGoapi(){
 
@@ -110,8 +97,48 @@ public class Affiliatess {
                 .contentType(ContentType.JSON)
                 .body(request)
                 .when().post("http://10.201.0.80:58990/4.0/affiliates").as(AffiliateGoApi.class);
-
         assertTrue(showAllProps(request, response));
-
     }
+
+
+    @Test
+    public void createAffiliateAsPojo(){
+
+    // Generate data
+        Map<String, Object> affiliate = new HashMap<>();
+        affiliate.put("email", generateEmail());
+        affiliate.put("password", generatePassword());
+        affiliate.put("login", generateFirstName());
+        affiliate.put("status", "active");
+        affiliate.put("custom_fields[1]", "skype");
+
+    // Validation assert
+        Affiliates partner = affiliateApiService.createAffiliate(affiliate)
+                .shouldHave(statusCode(200))
+                .shouldHave(bodyField("partner.id", not(emptyOrNullString())))
+                .shouldHave(bodyField("partner.email", equalTo(affiliate.get("email"))))
+                .shouldHave(bodyContainsAllFields("partner", affiliate)).asPojo(Affiliates.class);
+
+    // Clean data
+        connectToMongo.removeAffiliateById(partner.partner().id());
+    }
+
+
+    @Test
+    public void connectMySql() {
+    }
+
+
+    @Test
+    public void connectMongo(){
+    }
+
+
+
+    @AfterClass
+    public void cleanUp(){
+        connectToMongo.closeConnection();
+        connectToMySql.closeConnection();
+    }
+
 }
