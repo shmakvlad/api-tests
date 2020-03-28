@@ -1,5 +1,6 @@
 package com.affise.tests.Offers;
 
+import com.affise.api.annotations.Negative;
 import com.affise.api.annotations.Positive;
 import com.affise.api.database.ConnectToMongo;
 import com.affise.api.payloads.Advertiser;
@@ -105,34 +106,6 @@ public class GetOffer {
     }
 
 
-    @Test(description = "Admin with level == DENY can't see offers ( also can't get own offers in list )")
-    public void adminDenyGetOfferList(){
-        connectToMongo
-                .updateUserInCentralMongo("_id", adminUser.id(), ENTITY_ADVERTISER_LEVEL, DENY);
-
-        offerApiService
-                .getListOffers(adminUser.apiKey())
-                .shouldHave(statusCode(200))
-                .shouldHave(bodyField("offers.id", is(emptyArray())))
-                .shouldHave(bodyField("offers.id", not(hasItems(offer1.id(), offer3.id(), offer2.id(), offer4.id()))));
-
-    }
-
-
-    @Test(description = "Affiliate with level == DENY can't see offers ( also can't get own offers in list )")
-    public void affiliateDenyGetOfferList(){
-        connectToMongo
-                .updateUserInCentralMongo("_id", affiliateUser.id(), ENTITY_ADVERTISER_LEVEL, DENY);
-
-        offerApiService
-                .getListOffers(affiliateUser.apiKey())
-                .shouldHave(statusCode(200))
-                .shouldHave(bodyField("offers.id", is(emptyArray())))
-                .shouldHave(bodyField("offers.id", not(hasItems(offer1.id(), offer3.id(), offer2.id(), offer4.id()))));
-
-    }
-
-
     @Test(description = "User with level == READ and exception == DENY can't get offer in list")
     public void userReadExceptionDeny() {
         for (User user : Arrays.asList(adminUser, affiliateUser, salesUser)) {
@@ -208,6 +181,32 @@ public class GetOffer {
                     .updateUserInCentralMongoUnset("_id", user.id(),
                             "scopes.users.entity-advertiser.exceptions.strings.write");
         }
+    }
+
+
+
+    @Negative
+    @Test(description = "Admin with level == DENY can't see offers ( also can't get own offers in list )")
+    public void adminDenyGetOfferList(){
+        connectToMongo
+                .updateUserInCentralMongo("_id", adminUser.id(), ENTITY_ADVERTISER_LEVEL, DENY);
+
+        offerApiService
+                .getListOffers(adminUser.apiKey())
+                .shouldHave(statusCode(403));
+
+    }
+
+
+    @Test(description = "Affiliate with level == DENY can't see offers ( also can't get own offers in list )")
+    public void affiliateDenyGetOfferList(){
+        connectToMongo
+                .updateUserInCentralMongo("_id", affiliateUser.id(), ENTITY_ADVERTISER_LEVEL, DENY);
+
+        offerApiService
+                .getListOffers(affiliateUser.apiKey())
+                .shouldHave(statusCode(403));
+
     }
 
 

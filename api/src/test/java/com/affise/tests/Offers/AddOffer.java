@@ -11,6 +11,8 @@ import com.affise.api.services.UserApiService;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 import static com.affise.api.conditions.Conditions.bodyField;
 import static com.affise.api.conditions.Conditions.statusCode;
 import static com.affise.api.constans.Constans.PermissionsLevel.ENTITY_ADVERTISER_LEVEL;
@@ -110,6 +112,27 @@ public class AddOffer {
     }
 
 
+    @Test(description = "User with type Sales and (level == DENY/READ) can create offer with advertiser in exception write")
+    public void salesDenyReadOfferExceptionWrite() {
+        for (String level : Arrays.asList(DENY, READ)){
+    // Generate Data
+        connectToMongo
+                    .updateUserInCentralMongo("_id", salesUser.id(), ENTITY_ADVERTISER_LEVEL, level);
+        connectToMongo
+                .updateUserInCentralMongoAddToSet("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser1.id());
+
+    // Validation Assert
+        offerApiService
+                .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
+                .shouldHave(statusCode(200))
+                .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())));
+
+    // Clean data
+        connectToMongo
+                .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+        }
+    }
+
 
 
     @Negative
@@ -176,6 +199,67 @@ public class AddOffer {
         offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
                   .shouldHave(statusCode(403));
+    }
+
+
+    @Test(description = "User with type Sales and (level == DENY) can't create offer with advertiser in exception read")
+    public void salesDenyOfferExceptionRead() {
+    // Generate Data
+        connectToMongo
+                .updateUserInCentralMongo("_id", salesUser.id(), ENTITY_ADVERTISER_LEVEL, DENY);
+        connectToMongo
+                .updateUserInCentralMongoAddToSet("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.read", advertiser1.id());
+
+    // Validation Assert
+        offerApiService
+                .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
+                .shouldHave(statusCode(403));
+
+    // Clean data
+        connectToMongo
+                .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.read");
+    }
+
+
+    @Test(description = "User with type Sales and (level == READ) can't create offer with advertiser in exception deny")
+    public void salesReadOfferExceptionDeny() {
+    // Generate Data
+        connectToMongo
+                .updateUserInCentralMongo("_id", salesUser.id(), ENTITY_ADVERTISER_LEVEL, READ);
+        connectToMongo
+                .updateUserInCentralMongoAddToSet("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.deny", advertiser1.id());
+
+    // Validation Assert
+        offerApiService
+                .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
+                .shouldHave(statusCode(403));
+
+    // Clean data
+        connectToMongo
+                .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.deny");
+    }
+
+
+    @Test(description = "User with type Admin/Affiliate and (level == DENY/READ) can't create offer with advertiser in exception write")
+    public void adminAffiliateDenyReadOfferExceptionWrite() {
+        for (User user : Arrays.asList(adminUser, affiliateUser)) {
+            for (String level : Arrays.asList(DENY, READ)) {
+    // Generate Data
+                connectToMongo
+                        .updateUserInCentralMongo("_id", user.id(), ENTITY_ADVERTISER_LEVEL, level);
+                connectToMongo
+                        .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser1.id());
+
+    // Validation Assert
+                offerApiService
+                        .createOffer(generateOfferWithReqFields(advertiser1.id()), user.apiKey())
+                        .shouldHave(statusCode(403));
+
+    // Clean data
+                connectToMongo
+                        .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+            }
+        }
     }
 
 

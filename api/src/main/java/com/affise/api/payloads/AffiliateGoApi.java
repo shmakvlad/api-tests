@@ -31,6 +31,9 @@ public class AffiliateGoApi {
 	@JsonProperty("password")
 	private String password;
 
+	@JsonProperty("contact_person")
+	private String contactPerson;
+
 	@JsonProperty("sub_account_2_except")
 	private Object subAccount2Except;
 

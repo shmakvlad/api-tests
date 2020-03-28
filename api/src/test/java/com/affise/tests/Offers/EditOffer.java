@@ -95,7 +95,7 @@ public class EditOffer {
     }
 
 
-    @Test(description = "Sales with level == DENY can change manager on own advertiser")
+    @Test(description = "Sales with level == DENY can change offer_advertiser on own advertiser")
     public void salesChangeOwnManagerDeny() {
         Advertiser advertiser4 = getNewAdvertiser();
 
@@ -117,7 +117,7 @@ public class EditOffer {
     }
 
 
-    @Test(description = "Sales with level == READ can change manager on own advertiser")
+    @Test(description = "Sales with level == READ can change offer_advertiser on own advertiser")
     public void salesChangeOwnManagerRead() {
         Advertiser advertiser4 = getNewAdvertiser();
 
@@ -158,6 +158,98 @@ public class EditOffer {
     }
 
 
+    @Test(description = "Sales with level == DENY can change offer_advertiser in own offer on advertiser in write exception")
+    public void salesDenyChangeManagerExceptionWrite() {
+    // Generate Data
+        connectToMongo
+                .updateUserInCentralMongo("_id", salesUser.id(), ENTITY_ADVERTISER_LEVEL, DENY);
+        connectToMongo
+                .updateAdvertiserInMongo("_id", advertiser2.id(), "manager", salesUser.id());
+        connectToMongo
+                .updateAdvertiserInCentralMongo("_id", advertiser2.id(), "manager_id", salesUser.id());
+        connectToMongo
+                .updateUserInCentralMongoAddToSet("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser1.id());
+
+
+    // Validation Assert
+        offerApiService
+                .editOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey(), offer2.id())
+                .shouldHave(statusCode(200));
+
+    // Clean data
+        connectToMongo
+                .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+    }
+
+
+    @Test(description = "Sales with level == READ can change offer_advertiser in own offer on advertiser in write exception")
+    public void salesReadChangeManagerExceptionWrite() {
+    // Generate Data
+        connectToMongo
+                .updateUserInCentralMongo("_id", salesUser.id(), ENTITY_ADVERTISER_LEVEL, READ);
+        connectToMongo
+                .updateAdvertiserInMongo("_id", advertiser2.id(), "manager", salesUser.id());
+        connectToMongo
+                .updateAdvertiserInCentralMongo("_id", advertiser2.id(), "manager_id", salesUser.id());
+        connectToMongo
+                .updateUserInCentralMongoAddToSet("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser1.id());
+
+    // Validation Assert
+        offerApiService
+                .editOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey(), offer2.id())
+                .shouldHave(statusCode(200));
+
+    // Clean data
+        connectToMongo
+                .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+    }
+
+
+    @Test(description = "User with level == DENY can change offer_advertiser on advertiser in write exception")
+    public void userDenyChangeManagerExceptionWrite() {
+        for (User user : Arrays.asList(adminUser, affiliateUser, salesUser)) {
+    // Generate Data
+            connectToMongo
+                    .updateUserInCentralMongo("_id", user.id(), ENTITY_ADVERTISER_LEVEL, DENY);
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser1.id());
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser2.id());
+
+    // Validation Assert
+            offerApiService
+                    .editOffer(generateOfferWithReqFields(advertiser1.id()), user.apiKey(), offer2.id())
+                    .shouldHave(statusCode(200));
+
+    // Clean data
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+        }
+    }
+
+
+    @Test(description = "User with level == READ can change offer_advertiser on advertiser in write exception")
+    public void userReadChangeManagerExceptionWrite() {
+        for (User user : Arrays.asList(adminUser, affiliateUser, salesUser)) {
+    // Generate Data
+            connectToMongo
+                    .updateUserInCentralMongo("_id", user.id(), ENTITY_ADVERTISER_LEVEL, READ);
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser1.id());
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser2.id());
+
+    // Validation Assert
+            offerApiService
+                    .editOffer(generateOfferWithReqFields(advertiser1.id()), user.apiKey(), offer2.id())
+                    .shouldHave(statusCode(200));
+
+    // Clean data
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+        }
+    }
+
 
 
     @Negative
@@ -171,7 +263,7 @@ public class EditOffer {
 
     // Validation Assert
         offerApiService
-                .editOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey(), offer1.id())
+                .editOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey(), offer2.id())
                 .shouldHave(statusCode(403));
 
     // Clean data
@@ -190,7 +282,7 @@ public class EditOffer {
 
     // Validation Assert
         offerApiService
-                .editOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey(), offer1.id())
+                .editOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey(), offer2.id())
                 .shouldHave(statusCode(403));
 
     // Clean data
@@ -293,6 +385,98 @@ public class EditOffer {
     }
 
 
+    @Test(description = "User with level == READ can't change offer_advertiser on advertiser in deny exception")
+    public void userReadChangeManagerExceptionDeny() {
+        for (User user : Arrays.asList(adminUser, affiliateUser, salesUser)) {
+    // Generate Data
+            connectToMongo
+                    .updateUserInCentralMongo("_id", user.id(), ENTITY_ADVERTISER_LEVEL, READ);
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.deny", advertiser1.id());
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser2.id());
+
+    // Validation Assert
+            offerApiService
+                    .editOffer(generateOfferWithReqFields(advertiser1.id()), user.apiKey(), offer2.id())
+                    .shouldHave(statusCode(403));
+
+    // Clean data
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.deny");
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+        }
+    }
+
+
+    @Test(description = "User with level == DENY can't change offer_advertiser on advertiser in read exception")
+    public void userDenyChangeManagerExceptionRead() {
+        for (User user : Arrays.asList(adminUser, affiliateUser, salesUser)) {
+    // Generate Data
+            connectToMongo
+                    .updateUserInCentralMongo("_id", user.id(), ENTITY_ADVERTISER_LEVEL, DENY);
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.read", advertiser1.id());
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser2.id());
+
+    // Validation Assert
+            offerApiService
+                    .editOffer(generateOfferWithReqFields(advertiser1.id()), user.apiKey(), offer2.id())
+                    .shouldHave(statusCode(403));
+
+    // Clean data
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.read");
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+        }
+    }
+
+
+    @Test(description = "User with level == WRITE can't change offer_advertiser on advertiser in deny exception")
+    public void userWriteChangeManagerExceptionDeny() {
+        for (User user : Arrays.asList(adminUser, affiliateUser, salesUser)) {
+    // Generate Data
+            connectToMongo
+                    .updateUserInCentralMongo("_id", user.id(), ENTITY_ADVERTISER_LEVEL, WRITE);
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.deny", advertiser1.id());
+
+    // Validation Assert
+            offerApiService
+                    .editOffer(generateOfferWithReqFields(advertiser1.id()), user.apiKey(), offer2.id())
+                    .shouldHave(statusCode(403));
+
+    // Clean data
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.deny");
+        }
+    }
+
+
+    @Test(description = "User with level == WRITE can't change offer_advertiser on advertiser in read exception")
+    public void userWriteChangeManagerExceptionRead() {
+        for (User user : Arrays.asList(adminUser, affiliateUser, salesUser)) {
+    // Generate Data
+            connectToMongo
+                    .updateUserInCentralMongo("_id", user.id(), ENTITY_ADVERTISER_LEVEL, WRITE);
+            connectToMongo
+                    .updateUserInCentralMongoAddToSet("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.read", advertiser1.id());
+
+    // Validation Assert
+            offerApiService
+                    .editOffer(generateOfferWithReqFields(advertiser1.id()), user.apiKey(), offer2.id())
+                    .shouldHave(statusCode(403));
+
+    // Clean data
+            connectToMongo
+                    .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.read");
+        }
+    }
+
+
 
     @AfterClass
     public void removeData(){
@@ -302,6 +486,7 @@ public class EditOffer {
 
         connectToMongo.removeObject("admin", "suppliers", "_id", advertiser1.id());
         connectToMongo.removeObject("admin", "suppliers", "_id", advertiser2.id());
+        connectToMongo.removeObject("admin", "suppliers", "_id", advertiser3.id());
 
         connectToMongo.removeObject("admin", "cpa_programs", "_id", offer1.offerId());
         connectToMongo.removeObject("admin", "cpa_programs", "_id", offer2.offerId());

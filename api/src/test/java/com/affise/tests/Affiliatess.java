@@ -93,10 +93,10 @@ public class Affiliatess {
                 .filter(new ResponseLoggingFilter())
                 .filter(new RequestLoggingFilter())
                 .queryParam("client_id", "3")
-                .header("Authorization", "Bearer r2zVIsVqOQCTKjb5sSsythrxTOsHmROEIq6zgBfCyh4.ywlE9oPNfZfo_gcGClyT8HKq8swfvBGi5RdRg89liKM")
+                .header("Authorization", "Bearer 2JQxFCe0slViLKXyG91uSa4gqoPb7LOI3M1HHqZ0NQ0.Ck38pmgYHdpb-8XjgWEW-nZ5bBvC5lB9Y2Gt6oZTxC0")
                 .contentType(ContentType.JSON)
                 .body(request)
-                .when().post("http://10.201.0.80:58990/4.0/affiliates").as(AffiliateGoApi.class);
+                .when().post("http://localhost:50603/4.0/affiliates").as(AffiliateGoApi.class);
         assertTrue(showAllProps(request, response));
     }
 

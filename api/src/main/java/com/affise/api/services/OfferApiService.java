@@ -36,9 +36,9 @@ public class OfferApiService extends PhpApiService {
                 .when().get("/offers"));
     }
 
-    public AssertableResponse deleteOffer(Integer id) {
+    public AssertableResponse deleteOffer(Integer id, String usertype) {
         return new AssertableResponse(setUp()
-                .header(API_KEY, ADMIN)
+                .header(API_KEY, usertype)
                 .formParam("offer_id[]", id)
                 .when().post("/admin/offer/delete"));
     }
