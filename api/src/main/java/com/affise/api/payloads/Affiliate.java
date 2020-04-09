@@ -73,6 +73,9 @@ public class Affiliate {
 	@JsonProperty("sub_accounts")
 	private List<Object> subAccounts;
 
+	@JsonProperty("contactPerson")
+	private String contactPerson;
+
 	@JsonProperty("offersCount")
 	private int offersCount;
 

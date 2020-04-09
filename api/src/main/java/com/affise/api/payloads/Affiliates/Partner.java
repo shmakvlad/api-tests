@@ -25,6 +25,9 @@ public class Partner{
 	@JsonProperty("manager")
 	private Object manager;
 
+	@JsonProperty("contactPerson")
+	private String contactPerson;
+
 	@JsonProperty("level")
 	private int level;
 

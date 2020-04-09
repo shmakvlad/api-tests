@@ -69,7 +69,7 @@ public class GetAdvertiser {
     }
 
     @Test(description = "User with (exception == write) can get advertiser")
-    public void writeExceptGetAdvert() {
+    public void wrwiteExceptGetAdvert() {
         User user = getNewUser();
         userApiService.updateUserPermissions(user.id(), changeUserPermException(ENTITY_ADVERTISER, DENY, WRITE, adv1.id()));
         advertiserApiService.getListAdvertisers(user.apiKey())

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.affise.tests.Affiliatess" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-09T12:40:23" hostname="shmakovs-mbp" time="3.624">
+  <properties/>
+  <testcase name="createAffiliatePhp" classname="com.affise.tests.Affiliatess" time="3.624"/>
+  <system-out><![CDATA[2020-04-09 15:40:23 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-04-09 15:40:23 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-04-09 15:40:23 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:96}] to localhost:27017
+2020-04-09 15:40:23 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4441881, setName='rs0', canonicalAddress=mongo:27017, hosts=[mongo:27017], passives=[], arbiters=[], primary='mongo:27017', tagSet=TagSet{[]}, electionId=7fffffff0000000000000025, setVersion=1, lastWriteDate=Thu Apr 09 15:40:16 MSK 2020, lastUpdateTimeNanos=6555268119422}
+2020-04-09 15:40:23 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:97}] to localhost:27017
+2020-04-09 15:40:23 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5218782, setName='rs0', canonicalAddress=mongo:27017, hosts=[mongo:27017], passives=[], arbiters=[], primary='mongo:27017', tagSet=TagSet{[]}, electionId=7fffffff0000000000000025, setVersion=1, lastWriteDate=Thu Apr 09 15:40:16 MSK 2020, lastUpdateTimeNanos=6555282097011}
+Request method:	POST
+Request URI:	http://api.dev.affise.com/3.0/admin/partner
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	password=63g5f8s9pd7
+				login=Suzanna
+				email=ricki.aufderhar@yahoo.com
+				status=active
+				custom_fields[1]=skype
+Path params:	<none>
+Headers:		API-KEY=e8abca64a06e36ed954ffa8b45d7887e
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 09 Apr 2020 12:40:26 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: PHPSESSID=f54tsgsf58g84io1lvi0upu5qr; path=/
+Cache-Control: no-cache
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,POST,OPTIONS,DELETE
+Content-Encoding: gzip
+
+{
+    "status": 1,
+    "partner": {
+        "id": 83,
+        "created_at": "2020-04-09 15:40:25",
+        "updated_at": "2020-04-09 15:40:25",
+        "email": "ricki.aufderhar@yahoo.com",
+        "login": "Suzanna",
+        "ref_percent": null,
+        "name": null,
+        "notes": "",
+        "manager": null,
+        "status": "active",
+        "level": 0,
+        "payment_systems": [
+            
+        ],
+        "customFields": [
+            {
+                "name": "Skype",
+                "value": "skype",
+                "label": "skype",
+                "id": 1
+            }
+        ],
+        "balance": {
+            "RUB": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            },
+            "USD": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            },
+            "EUR": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            },
+            "BTC": {
+                "balance": 0,
+                "hold": 0,
+                "available": 0
+            }
+        },
+        "offersCount": 0,
+        "api_key": "aade2eb5e9d5fe52255659de63953602",
+        "address_1": null,
+        "address_2": null,
+        "city": null,
+        "country": null,
+        "zip_code": null,
+        "phone": null,
+        "ref": null,
+        "sub_accounts": [
+            
+        ],
+        "contactPerson": null
+    },
+    "id": 83
+}
+2020-04-09 15:40:26 INFO  c.a.a.assertions.AssertableResponse - Check condition: status code is 200
+2020-04-09 15:40:26 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ partner.id ] not (null or an empty string)
+2020-04-09 15:40:26 INFO  c.a.a.assertions.AssertableResponse - Check condition: body field [ partner.email ] "ricki.aufderhar@yahoo.com"
+2020-04-09 15:40:26 INFO  c.a.a.assertions.AssertableResponse - Check condition: body fields [ partner ] {password=63g5f8s9pd7, login=Suzanna, email=ricki.aufderhar@yahoo.com, status=active, custom_fields[1]=skype}
+2020-04-09 15:40:27 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:99}] to localhost:27017
+2020-04-09 15:40:27 INFO  c.affise.api.database.ConnectToMongo - Affiliates 83 successfully delete from MongoDB
+2020-04-09 15:40:27 INFO  c.affise.api.database.ConnectToMySql - Affiliates 83 successfully delete from MySql
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
