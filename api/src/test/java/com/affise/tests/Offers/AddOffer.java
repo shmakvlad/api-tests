@@ -8,6 +8,7 @@ import com.affise.api.payloads.User;
 import com.affise.api.services.AdvertiserApiService;
 import com.affise.api.services.OfferApiService;
 import com.affise.api.services.UserApiService;
+import io.restassured.response.Response;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -45,10 +46,15 @@ public class AddOffer {
         connectToMongo
                 .updateUserInCentralMongo("_id", adminUser.id() , ENTITY_ADVERTISER_LEVEL, WRITE);
 
-        offerApiService
+        Response offer = offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), adminUser.apiKey())
                     .shouldHave(statusCode(200))
-                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())));
+                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())))
+                    .getResponse();
+
+        if (offer.getStatusCode() == 200){
+            connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
+        }
     }
 
 
@@ -57,10 +63,15 @@ public class AddOffer {
         connectToMongo
                 .updateUserInCentralMongo("_id", affiliateUser.id() , ENTITY_ADVERTISER_LEVEL, WRITE);
 
-        offerApiService
+        Response offer = offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), affiliateUser.apiKey())
                     .shouldHave(statusCode(200))
-                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())));
+                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())))
+                    .getResponse();
+
+        if (offer.getStatusCode() == 200){
+            connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
+        }
     }
 
 
@@ -69,10 +80,15 @@ public class AddOffer {
         connectToMongo
                 .updateUserInCentralMongo("_id", salesUser.id() , ENTITY_ADVERTISER_LEVEL, WRITE);
 
-        offerApiService
+        Response offer = offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
                     .shouldHave(statusCode(200))
-                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())));
+                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())))
+                    .getResponse();
+
+        if (offer.getStatusCode() == 200){
+            connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
+        }
     }
 
 
@@ -87,10 +103,16 @@ public class AddOffer {
                 .updateUserInCentralMongo("_id", salesUser.id() , ENTITY_ADVERTISER_LEVEL, READ);
 
     // Validation Assert
-        offerApiService
+        Response offer = offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser2.id()), salesUser.apiKey())
                     .shouldHave(statusCode(200))
-                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser2.id())));
+                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser2.id())))
+                    .getResponse();
+
+    // Clean data
+        if (offer.getStatusCode() == 200){
+            connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
+        }
     }
 
 
@@ -105,10 +127,16 @@ public class AddOffer {
                 .updateUserInCentralMongo("_id", salesUser.id() , ENTITY_ADVERTISER_LEVEL, DENY);
 
     // Validation Assert
-        offerApiService
+        Response offer = offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser2.id()), salesUser.apiKey())
                     .shouldHave(statusCode(200))
-                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser2.id())));
+                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser2.id())))
+                    .getResponse();
+
+    // Clean data
+        if (offer.getStatusCode() == 200){
+            connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
+        }
     }
 
 
@@ -122,14 +150,19 @@ public class AddOffer {
                 .updateUserInCentralMongoAddToSet("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write", advertiser1.id());
 
     // Validation Assert
-        offerApiService
+        Response offer = offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
-                .shouldHave(statusCode(200))
-                .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())));
+                    .shouldHave(statusCode(200))
+                    .shouldHave(bodyField("offer.advertiser", equalTo(advertiser1.id())))
+                    .getResponse();
 
     // Clean data
         connectToMongo
                 .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
+
+            if (offer.getStatusCode() == 200){
+                connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
+            }
         }
     }
 
