@@ -22,6 +22,7 @@ dependencies {
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     compile group: 'org.aeonbits.owner', name: 'owner-java8', version: '1.0.10'
+    compile group: 'com.github.docker-java', name: 'docker-java', version: '3.1.5'
     compile 'org.mongodb:mongodb-driver-sync:4.0.0'
     compile 'org.assertj:assertj-core:3.11.1'
     compile 'mysql:mysql-connector-java:8.0.19'
@@ -31,9 +32,9 @@ dependencies {
 test {
     useTestNG()
     
-    maxParallelForks = 5
+    maxParallelForks = 4
     failFast = false
-    forkEvery = 3
+    forkEvery = 4
     
     testLogging{
         events "PASSED", "FAILED", "SKIPPED"

@@ -19,6 +19,9 @@ public class Offer{
 	@JsonProperty("uniqIpOnly")
 	private int uniqIpOnly;
 
+	@JsonProperty("disabled_choice_postback_goal")
+	private boolean disabledChoicePostBackGoal;
+
 	@JsonProperty("notes")
 	private Object notes;
 

@@ -8,6 +8,8 @@ import com.affise.api.payloads.AffiliateGoApi;
 import com.affise.api.payloads.Affiliates.Affiliates;
 import com.affise.api.services.AffiliateApiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.core.DockerClientBuilder;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -35,6 +37,7 @@ public class Affiliatess {
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
     private final ConnectToMongo connectToMongo = setUp();
     private final ConnectToMySql connectToMySql = new ConnectToMySql();
+    private final DockerClient dockerClient = DockerClientBuilder.getInstance().build();
 
 
 
@@ -68,6 +71,7 @@ public class Affiliatess {
     // Clean data
         connectToMongo.removeAffiliateById(affiliateObj.id());
         connectToMySql.deleteAffiliateFromMySql(affiliateObj.id());
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 

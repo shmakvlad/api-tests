@@ -9,6 +9,8 @@ import com.affise.api.payloads.User;
 import com.affise.api.services.AdvertiserApiService;
 import com.affise.api.services.OfferApiService;
 import com.affise.api.services.UserApiService;
+import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.core.DockerClientBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -30,6 +32,7 @@ public class GetOffer {
     private final UserApiService userApiService = new UserApiService();
     private final ConnectToMongo connectToMongo = new ConnectToMongo();
     private final OfferApiService offerApiService = new OfferApiService();
+    private final DockerClient dockerClient = DockerClientBuilder.getInstance().build();
 
     private final User adminUser = getNewUser(ROLE_ADMIN);
     private final User affiliateUser = getNewUser(ROLE_MAN_AFFILIATE);
@@ -59,6 +62,7 @@ public class GetOffer {
                     .shouldHave(statusCode(200))
                     .shouldHave(bodyField("offers.id", hasItems(offer1.id(), offer2.id(), offer3.id(), offer4.id())));
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -73,6 +77,7 @@ public class GetOffer {
                     .shouldHave(statusCode(200))
                     .shouldHave(bodyField("offers.id", hasItems(offer1.id(), offer2.id(), offer3.id(), offer4.id())));
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
     // Bug
@@ -89,6 +94,7 @@ public class GetOffer {
                 .shouldHave(bodyField("offers.id", not(hasItems(offer1.id(), offer2.id(), offer3.id(), offer4.id()))));
 
         connectToMongo.removeObject("admin", "users", "_id", sales.id());
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -103,6 +109,7 @@ public class GetOffer {
                 .shouldHave(bodyField("offers.id", hasItems(offer3.id())))
                 .shouldHave(bodyField("offers.id", not(hasItems(offer1.id(), offer2.id(), offer4.id()))));
 
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -126,6 +133,7 @@ public class GetOffer {
             connectToMongo
                     .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.deny");
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -149,7 +157,7 @@ public class GetOffer {
             connectToMongo
                     .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.deny");
         }
-
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -181,6 +189,7 @@ public class GetOffer {
                     .updateUserInCentralMongoUnset("_id", user.id(),
                             "scopes.users.entity-advertiser.exceptions.strings.write");
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -195,6 +204,7 @@ public class GetOffer {
                 .getListOffers(adminUser.apiKey())
                 .shouldHave(statusCode(403));
 
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -207,6 +217,7 @@ public class GetOffer {
                 .getListOffers(affiliateUser.apiKey())
                 .shouldHave(statusCode(403));
 
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 

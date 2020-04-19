@@ -9,6 +9,8 @@ import com.affise.api.payloads.User;
 import com.affise.api.services.AdvertiserApiService;
 import com.affise.api.services.OfferApiService;
 import com.affise.api.services.UserApiService;
+import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.core.DockerClientBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -28,6 +30,7 @@ public class DeleteOffer {
     private final UserApiService userApiService = new UserApiService();
     private final OfferApiService offerApiService = new OfferApiService();
     private final ConnectToMongo connectToMongo = new ConnectToMongo();
+    private final DockerClient dockerClient = DockerClientBuilder.getInstance().build();
 
     private final User adminUser = getNewUser(ROLE_ADMIN);
     private final User affiliateUser = getNewUser(ROLE_MAN_AFFILIATE);
@@ -57,6 +60,7 @@ public class DeleteOffer {
                         .removeObject("admin", "cpa_programs", "_id", offer.offerId());
             }
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -76,6 +80,7 @@ public class DeleteOffer {
                         .removeObject("admin", "cpa_programs", "_id", offer.offerId());
             }
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -104,6 +109,7 @@ public class DeleteOffer {
                         .removeObject("admin", "cpa_programs", "_id", offer.offerId());
             }
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -122,6 +128,7 @@ public class DeleteOffer {
             connectToMongo
                     .removeObject("admin", "cpa_programs", "_id", offer.offerId());
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -138,6 +145,7 @@ public class DeleteOffer {
             connectToMongo
                     .removeObject("admin", "cpa_programs", "_id", offer.offerId());
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -153,8 +161,8 @@ public class DeleteOffer {
                     .shouldHave(statusCode(403));
             connectToMongo
                     .removeObject("admin", "cpa_programs", "_id", offer.offerId());
-
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -170,8 +178,8 @@ public class DeleteOffer {
                     .shouldHave(statusCode(403));
             connectToMongo
                     .removeObject("admin", "cpa_programs", "_id", offer.offerId());
-
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -197,6 +205,7 @@ public class DeleteOffer {
             connectToMongo
                     .removeObject("admin", "cpa_programs", "_id", offer.offerId());
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -222,6 +231,7 @@ public class DeleteOffer {
             connectToMongo
                     .removeObject("admin", "cpa_programs", "_id", offer.offerId());
         }
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
