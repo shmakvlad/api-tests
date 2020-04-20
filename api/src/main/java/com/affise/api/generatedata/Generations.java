@@ -1,5 +1,6 @@
 package com.affise.api.generatedata;
 
+import com.affise.api.payloads.Go.Offers.LandingsItem;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 
@@ -53,6 +54,14 @@ public class Generations {
             else map.put(key, generateFirstName());
         }
         return map;
+    }
+
+    public static List generateList(String... field) {
+        return Arrays.asList(field);
+    }
+
+    public static List generateList(LandingsItem... field) {
+        return Arrays.asList(field);
     }
 
 }

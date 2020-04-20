@@ -24,4 +24,7 @@ public interface ProjectConfig extends Config {
     String mysqlPassword();
     String mysqlUser();
 
+    String clientId();
+    String token();
+
 }

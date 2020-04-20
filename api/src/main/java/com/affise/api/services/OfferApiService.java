@@ -1,6 +1,7 @@
 package com.affise.api.services;
 
 import com.affise.api.assertions.AssertableResponse;
+import com.affise.api.payloads.Go.Offers.OfferGo;
 
 import java.util.Map;
 
@@ -41,6 +42,13 @@ public class OfferApiService extends PhpApiService {
                 .header(API_KEY, usertype)
                 .formParam("offer_id[]", id)
                 .when().post("/admin/offer/delete"));
+    }
+
+    public AssertableResponse createGoOffer(OfferGo requestBody, String token) {
+        return new AssertableResponse(goSetUp()
+                .header("Authorization", "Bearer " + token)
+                .body(requestBody)
+                .when().post("/offers"));
     }
 
 }

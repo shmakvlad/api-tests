@@ -3,7 +3,6 @@ package com.affise.api.payloads;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.SneakyThrows;
 import lombok.experimental.Accessors;
@@ -20,10 +19,9 @@ import java.util.List;
 @Getter
 @Setter
 @Accessors(fluent = true)
-@RequiredArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.robohorse.robopojogenerator")
-public class AffiliateGoApi {
+public class AffiliateGo {
 
 	@JsonProperty("affiliate_manager_id")
 	private String affiliateManagerId;

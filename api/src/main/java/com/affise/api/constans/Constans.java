@@ -4,6 +4,7 @@ public class Constans {
 
     public static class Run{
         public static String host = Hosts.DEV_URL;
+        public static String goapihost = Hosts.GO_API_URL;
         public static String apipath = Path.API_PATH;
         public static String goapipath = Path.GO_API_PATH;
         public static String otherApiPath = Path.OTHER_API_PATH;
@@ -12,7 +13,7 @@ public class Constans {
     public static class Hosts{
         public static String STAGE_URL = "https://api-staging.affise.com";
         public static String DEV_URL = "http://api.dev.affise.com";
-        public static String GO_API_URL = "http://localhost:50603";
+        public static String GO_API_URL = "http://10.201.0.80:32835";
     }
 
     public static class Path{

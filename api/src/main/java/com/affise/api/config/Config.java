@@ -29,11 +29,6 @@ public class Config {
             .setBaseUri(getConfig().baseUrl())
             .setBasePath(apipath)
             .addFilters(getFilters())
-//            .setConfig(RestAssured.config.decoderConfig(decoderConfig().contentDecoders(DEFLATE, GZIP)))
-//            .setConfig(config().encoderConfig(encoderConfig().defaultContentCharset("US-ASCII")))
-//            .setConfig(config().decoderConfig(decoderConfig().defaultContentCharset("UTF-8")))
-//            .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
-//            .addFilter(new ResponseLoggingFilter())
             .build();
 
     public ResponseSpecification phpApiRespSpec = new ResponseSpecBuilder()
@@ -46,7 +41,15 @@ public class Config {
             .setBasePath(otherApiPath)
             .setContentType(ContentType.JSON)
             .addFilters(getFilters())
-//            .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
+            .build();
+
+    public RequestSpecification goApiReqSpec = new RequestSpecBuilder()
+            .setBaseUri(goapihost)
+            .setBasePath(goapipath)
+            .setContentType(ContentType.JSON)
+            .setAccept(ContentType.JSON)
+            .addFilters(getFilters())
+            .addQueryParam("client_id", getConfig().clientId())
             .build();
 
     private List<Filter> getFilters(){
@@ -55,4 +58,11 @@ public class Config {
         }
         return Collections.emptyList();
     }
+
+//            .setConfig(RestAssured.config.decoderConfig(decoderConfig().contentDecoders(DEFLATE, GZIP)))
+//            .setConfig(config().encoderConfig(encoderConfig().defaultContentCharset("US-ASCII")))
+//            .setConfig(config().decoderConfig(decoderConfig().defaultContentCharset("UTF-8")))
+//            .log(LogDetail.URI).log(LogDetail.METHOD).log(LogDetail.PARAMS).log(LogDetail.HEADERS).log(LogDetail.BODY)
+//            .addFilter(new ResponseLoggingFilter())
+
 }
