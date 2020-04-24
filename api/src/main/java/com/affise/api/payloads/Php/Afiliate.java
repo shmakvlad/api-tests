@@ -1,4 +1,4 @@
-package com.affise.api.payloads.Affiliates;
+package com.affise.api.payloads.Php;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,7 +14,7 @@ import java.util.List;
 @Accessors(fluent = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.robohorse.robopojogenerator")
-public class Partner{
+public class Afiliate {
 
 	@JsonProperty("country")
 	private Object country;
@@ -25,9 +25,6 @@ public class Partner{
 	@JsonProperty("manager")
 	private Object manager;
 
-	@JsonProperty("contactPerson")
-	private String contactPerson;
-
 	@JsonProperty("level")
 	private int level;
 
@@ -35,7 +32,7 @@ public class Partner{
 	private Object city;
 
 	@JsonProperty("customFields")
-	private List<CustomFieldsItem> customFields;
+	private List<Object> customFields;
 
 	@JsonProperty("address_1")
 	private Object address1;
@@ -47,7 +44,7 @@ public class Partner{
 	private String createdAt;
 
 	@JsonProperty("login")
-	private String login;
+	private Object login;
 
 	@JsonProperty("payment_systems")
 	private List<Object> paymentSystems;
@@ -65,7 +62,7 @@ public class Partner{
 	private Object refPercent;
 
 	@JsonProperty("balance")
-	private Balance balance;
+	private Object balance;
 
 	@JsonProperty("api_key")
 	private String apiKey;
@@ -75,6 +72,9 @@ public class Partner{
 
 	@JsonProperty("sub_accounts")
 	private List<Object> subAccounts;
+
+	@JsonProperty("contactPerson")
+	private String contactPerson;
 
 	@JsonProperty("offersCount")
 	private int offersCount;
@@ -91,33 +91,7 @@ public class Partner{
 	@JsonProperty("status")
 	private String status;
 
-	@Override
-	public String toString() {
-		return "Partner{" +
-				"country=" + country +
-				", notes='" + notes + '\'' +
-				", manager=" + manager +
-				", level=" + level +
-				", city=" + city +
-				", customFields=" + customFields +
-				", address1=" + address1 +
-				", address2=" + address2 +
-				", createdAt='" + createdAt + '\'' +
-				", login='" + login + '\'' +
-				", paymentSystems=" + paymentSystems +
-				", zipCode=" + zipCode +
-				", ref=" + ref +
-				", updatedAt='" + updatedAt + '\'' +
-				", refPercent=" + refPercent +
-				", balance=" + balance +
-				", apiKey='" + apiKey + '\'' +
-				", phone=" + phone +
-				", subAccounts=" + subAccounts +
-				", offersCount=" + offersCount +
-				", name=" + name +
-				", id=" + id +
-				", email='" + email + '\'' +
-				", status='" + status + '\'' +
-				'}';
-	}
+	@JsonProperty("password")
+	private String password;
+
 }

@@ -1,4 +1,4 @@
-package com.affise.api.payloads.Affiliates;
+package com.affise.api.payloads.Php.Affiliates;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,23 +13,14 @@ import javax.annotation.processing.Generated;
 @Accessors(fluent = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.robohorse.robopojogenerator")
-public class Affiliates{
+public class Currency {
 
-	@JsonProperty("partner")
-	private Partner partner;
+	@JsonProperty("balance")
+	private int balance;
 
-	@JsonProperty("id")
-	private int id;
+	@JsonProperty("available")
+	private int available;
 
-	@JsonProperty("status")
-	private int status;
-
-	@Override
-	public String toString() {
-		return "Affiliates{" +
-				"partner=" + partner +
-				", id=" + id +
-				", status=" + status +
-				'}';
-	}
+	@JsonProperty("hold")
+	private int hold;
 }

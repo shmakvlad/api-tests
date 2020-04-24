@@ -1,8 +1,8 @@
 package com.affise.api.assertions;
 
 import com.affise.api.conditions.Condition;
-import com.affise.api.payloads.Affiliate;
-import com.affise.api.payloads.Offers.Offer;
+import com.affise.api.payloads.Php.Afiliate;
+import com.affise.api.payloads.Php.Offers.Offer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
@@ -52,9 +52,9 @@ public class AssertableResponse {
     }
 
     @SneakyThrows
-    public Affiliate asAffiliatePojo(){
+    public Afiliate asAffiliatePojo(){
         String json = response.asString();
-        Affiliate affiliate = new ObjectMapper().readValue(jsonNode(json, "partner"), Affiliate.class);
+        Afiliate affiliate = new ObjectMapper().readValue(jsonNode(json, "partner"), Afiliate.class);
         return affiliate;
     }
 

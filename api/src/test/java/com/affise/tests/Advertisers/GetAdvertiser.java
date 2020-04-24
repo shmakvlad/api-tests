@@ -2,8 +2,8 @@ package com.affise.tests.Advertisers;
 
 import com.affise.api.annotations.Negative;
 import com.affise.api.annotations.Positive;
-import com.affise.api.payloads.Advertiser;
-import com.affise.api.payloads.User;
+import com.affise.api.payloads.Php.Advertiser;
+import com.affise.api.payloads.Php.User;
 import com.affise.api.services.AdvertiserApiService;
 import com.affise.api.services.UserApiService;
 import org.testng.annotations.Test;
@@ -90,7 +90,7 @@ public class GetAdvertiser {
 
 
     @Negative
-    @Test(description = "Affiliates with (level == deny) can't get advertiser list")
+    @Test(description = "Affiliate with (level == deny) can't get advertiser list")
     public void affiliateDenyGetAdvert() {
         User user = getNewUser(ROLE_MAN_AFFILIATE);
         userApiService.updateUserPermissions(user.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));

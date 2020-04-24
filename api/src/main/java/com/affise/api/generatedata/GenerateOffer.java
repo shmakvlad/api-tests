@@ -1,7 +1,7 @@
 package com.affise.api.generatedata;
 
 import com.affise.api.database.ConnectToMongo;
-import com.affise.api.payloads.Offers.Offer;
+import com.affise.api.payloads.Php.Offers.Offer;
 import com.affise.api.services.OfferApiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;

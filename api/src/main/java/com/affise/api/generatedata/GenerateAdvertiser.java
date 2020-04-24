@@ -1,6 +1,6 @@
 package com.affise.api.generatedata;
 
-import com.affise.api.payloads.Advertiser;
+import com.affise.api.payloads.Php.Advertiser;
 import com.affise.api.services.AdvertiserApiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;

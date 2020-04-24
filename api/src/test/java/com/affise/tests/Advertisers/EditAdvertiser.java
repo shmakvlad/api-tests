@@ -3,8 +3,8 @@ package com.affise.tests.Advertisers;
 import com.affise.api.annotations.Negative;
 import com.affise.api.annotations.Positive;
 import com.affise.api.database.ConnectToMongo;
-import com.affise.api.payloads.Advertiser;
-import com.affise.api.payloads.User;
+import com.affise.api.payloads.Php.Advertiser;
+import com.affise.api.payloads.Php.User;
 import com.affise.api.services.AdvertiserApiService;
 import com.affise.api.services.UserApiService;
 import org.testng.annotations.AfterClass;
@@ -146,7 +146,7 @@ public class EditAdvertiser {
                 .shouldHave(statusCode(403));
     }
 
-    @Test(description = "Affiliates can't edit own advertiser")
+    @Test(description = "Affiliate can't edit own advertiser")
     public void affiliateEditOwnAdvert() {
         advertiserApiService.editAdvertiser(manager, affiliate.id(), ADMIN, ownAdvertiser.id())
                 .shouldHave(statusCode(200));

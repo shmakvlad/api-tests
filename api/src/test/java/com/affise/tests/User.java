@@ -1,4 +1,4 @@
-package com.affise.tests.Users;
+package com.affise.tests;
 
 import com.affise.api.annotations.Positive;
 import com.affise.api.services.UserApiService;
@@ -13,7 +13,7 @@ import static com.affise.api.constans.Constans.UserType.ROLE_ADMIN;
 import static com.affise.api.generatedata.GenerateUser.generateUserWithReqFields;
 import static org.hamcrest.Matchers.*;
 
-public class AddUser {
+public class User {
 
     private final UserApiService userApiService = new UserApiService();
 

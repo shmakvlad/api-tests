@@ -2,7 +2,7 @@ package com.affise.tests.Advertisers;
 
 import com.affise.api.annotations.Negative;
 import com.affise.api.annotations.Positive;
-import com.affise.api.payloads.User;
+import com.affise.api.payloads.Php.User;
 import com.affise.api.database.ConnectToMongo;
 import com.affise.api.services.AdvertiserApiService;
 import com.affise.api.services.UserApiService;
@@ -42,7 +42,7 @@ public class AddAdvertiser {
                .shouldHave(bodyField("advertiser.manager", is(emptyOrNullString())));
     }
 
-    @Test(description = "User with type Affiliates and (level == write) can create advertiser")
+    @Test(description = "User with type Affiliate and (level == write) can create advertiser")
     public void affiliateWriteAdvert() {
         userApiService.updateUserPermissions(affiliateUser.id(), changeUserPermission(ENTITY_ADVERTISER, WRITE));
 
@@ -96,7 +96,7 @@ public class AddAdvertiser {
                .shouldHave(statusCode(403));
     }
 
-    @Test(description = "User with type Affiliates and (level == read) can create advertiser")
+    @Test(description = "User with type Affiliate and (level == read) can create advertiser")
     public void affiliateReadAdvert() {
         userApiService.updateUserPermissions(affiliateUser.id(), changeUserPermission(ENTITY_ADVERTISER, READ));
 
@@ -104,7 +104,7 @@ public class AddAdvertiser {
                 .shouldHave(statusCode(403));
     }
 
-    @Test(description = "User with type Affiliates and (level == deny) can create advertiser")
+    @Test(description = "User with type Affiliate and (level == deny) can create advertiser")
     public void affiliateDenyAdvert() {
         userApiService.updateUserPermissions(affiliateUser.id(), changeUserPermission(ENTITY_ADVERTISER, DENY));
 

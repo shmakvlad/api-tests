@@ -1,6 +1,6 @@
 package com.affise.api.generatedata;
 
-import com.affise.api.payloads.User;
+import com.affise.api.payloads.Php.User;
 import com.affise.api.services.UserApiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;

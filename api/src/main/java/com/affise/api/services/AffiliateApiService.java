@@ -2,7 +2,7 @@ package com.affise.api.services;
 
 
 import com.affise.api.assertions.AssertableResponse;
-import com.affise.api.payloads.AffiliateGo;
+import com.affise.api.payloads.Go.Affiliates.AffiliateGo;
 
 import java.util.Map;
 
@@ -33,6 +33,13 @@ public class AffiliateApiService extends PhpApiService {
     }
 
     public AssertableResponse createGoAffiliate(AffiliateGo requestBody, String token) {
+        return new AssertableResponse(goSetUp()
+                .header("Authorization", "Bearer " + token)
+                .body(requestBody)
+                .when().post("/affiliates"));
+    }
+
+    public AssertableResponse createGoAffiliate(String requestBody, String token) {
         return new AssertableResponse(goSetUp()
                 .header("Authorization", "Bearer " + token)
                 .body(requestBody)

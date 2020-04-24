@@ -1,4 +1,4 @@
-package com.affise.api.payloads.Offers;
+package com.affise.api.payloads.Php.Affiliates;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,27 +13,18 @@ import javax.annotation.processing.Generated;
 @Accessors(fluent = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.robohorse.robopojogenerator")
-public class Kpi{
+public class Balance{
 
-	@JsonProperty("ru")
-	private String ru;
+	@JsonProperty("BTC")
+	private Currency bTC;
 
-	@JsonProperty("vi")
-	private String vi;
+	@JsonProperty("EUR")
+	private Currency eUR;
 
-	@JsonProperty("pt")
-	private String pt;
+	@JsonProperty("USD")
+	private Currency uSD;
 
-	@JsonProperty("ka")
-	private String ka;
-
-	@JsonProperty("en")
-	private String en;
-
-	@JsonProperty("my")
-	private String my;
-
-	@JsonProperty("es")
-	private String es;
+	@JsonProperty("RUB")
+	private Currency rUB;
 
 }

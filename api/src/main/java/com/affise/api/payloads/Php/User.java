@@ -1,4 +1,4 @@
-package com.affise.api.payloads;
+package com.affise.api.payloads.Php;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
