@@ -12,6 +12,7 @@ import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.core.DockerClientBuilder;
 import io.restassured.response.Response;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -58,8 +59,6 @@ public class AddOffer {
         if (offer.getStatusCode() == 200){
             connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
         }
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -77,8 +76,6 @@ public class AddOffer {
         if (offer.getStatusCode() == 200){
             connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
         }
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -96,8 +93,6 @@ public class AddOffer {
         if (offer.getStatusCode() == 200){
             connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
         }
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -122,8 +117,6 @@ public class AddOffer {
         if (offer.getStatusCode() == 200){
             connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
         }
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -148,8 +141,6 @@ public class AddOffer {
         if (offer.getStatusCode() == 200){
             connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
         }
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -177,7 +168,6 @@ public class AddOffer {
                 connectToMongo.removeObject("admin", "cpa_programs", "_id", offer.path("offer.offer_id"));
             }
         }
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -191,8 +181,6 @@ public class AddOffer {
         offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), adminUser.apiKey())
                     .shouldHave(statusCode(403));
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -204,8 +192,6 @@ public class AddOffer {
         offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), adminUser.apiKey())
                     .shouldHave(statusCode(403));
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -217,8 +203,6 @@ public class AddOffer {
         offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), affiliateUser.apiKey())
                     .shouldHave(statusCode(403));
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -230,8 +214,6 @@ public class AddOffer {
         offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), affiliateUser.apiKey())
                     .shouldHave(statusCode(403));
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -243,8 +225,6 @@ public class AddOffer {
         offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
                    .shouldHave(statusCode(403));
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -256,8 +236,6 @@ public class AddOffer {
         offerApiService
                 .createOffer(generateOfferWithReqFields(advertiser1.id()), salesUser.apiKey())
                   .shouldHave(statusCode(403));
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -277,8 +255,6 @@ public class AddOffer {
     // Clean data
         connectToMongo
                 .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.read");
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -298,8 +274,6 @@ public class AddOffer {
     // Clean data
         connectToMongo
                 .updateUserInCentralMongoUnset("_id", salesUser.id(), "scopes.users.entity-advertiser.exceptions.strings.deny");
-
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
 
@@ -323,9 +297,14 @@ public class AddOffer {
                         .updateUserInCentralMongoUnset("_id", user.id(), "scopes.users.entity-advertiser.exceptions.strings.write");
             }
         }
-        dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }
 
+
+
+    @AfterMethod
+    public void restartMemcached(){
+        dockerClient.restartContainerCmd("affisedev-memcached").exec();
+    }
 
 
     @AfterClass

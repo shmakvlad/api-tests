@@ -1,6 +1,6 @@
 package com.affise.api.generatedata;
 
-import com.affise.api.payloads.Php.Affiliate;
+import com.affise.api.payloads.Php.Afiliate;
 import com.affise.api.services.AffiliateApiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
@@ -29,9 +29,9 @@ public class GenerateAffiliate {
     }
 
     @SneakyThrows
-    public static Affiliate getNewAffiliate() {
+    public static Afiliate getNewAffiliate() {
             String json = affiliateApiService.createAffiliate(generateAffiliateWithReqFields()).asString();
-            Affiliate affiliate = new ObjectMapper().readValue(jsonNode(json, "partner"), Affiliate.class);
+            Afiliate affiliate = new ObjectMapper().readValue(jsonNode(json, "partner"), Afiliate.class);
         return affiliate;
     }
 
