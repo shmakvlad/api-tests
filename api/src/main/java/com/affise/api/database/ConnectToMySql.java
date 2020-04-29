@@ -4,6 +4,7 @@ package com.affise.api.database;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
 import java.sql.*;
 
 import static com.affise.api.config.Config.getConfig;
@@ -43,7 +44,21 @@ public class ConnectToMySql {
     public void deleteAffiliateFromMySql(int partnerId) {
         String query = "DELETE FROM partner WHERE id = " + partnerId;
         statement.executeUpdate(query);
-        log.info("Affiliates {} successfully delete from MySql", partnerId);
+        log.info("Affiliate {} successfully delete from MySql", partnerId);
+    }
+
+    @SneakyThrows
+    public void existsInMySql(int partnerId) {
+        String query = "SELECT EXISTS(SELECT id FROM partner WHERE id = " + partnerId + ")";
+        resultSet = statement.executeQuery(query);
+        resultSet.first();
+        if (resultSet.getBoolean(1)) {
+            log.info("Affiliate {} exists in MySql", partnerId);
+        }
+        else {
+            log.info("Affiliate {} not exists in MySql", partnerId);
+            throw new IOException("affiliate not saved in MySql");
+        }
     }
 
     public void closeConnection() {

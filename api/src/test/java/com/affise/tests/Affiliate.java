@@ -60,12 +60,14 @@ public class Affiliate {
 
     // Deserialize to verify existence
         Afiliate affiliateObj = new ObjectMapper().readValue(jsonNode(partner.asString(), "partner"), Afiliate.class);
+        connectToMySql.existsInMySql(affiliateObj.id());
+        connectToMongo.existsAffiliateInMongo(affiliateObj.id());
+        connectToMongo.existsAffiliateInCentralMongo(affiliateObj.id());
 
     // Clear data
         connectToMongo.removeAffiliateById(affiliateObj.id());
         connectToMySql.deleteAffiliateFromMySql(affiliateObj.id());
         dockerClient.restartContainerCmd("affisedev-memcached").exec();
-
     }
 
 
@@ -87,7 +89,6 @@ public class Affiliate {
                 .shouldHave(bodyField("status", equalTo(request.status())))
                 .shouldHave(bodyField("affiliate_manager_id", equalTo(request.affiliateManagerId())))
                 .asPojo(AffiliateGo.class);
-
     }
 
 

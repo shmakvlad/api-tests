@@ -2,16 +2,19 @@ package com.affise.api.database;
 
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerAddress;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -105,6 +108,21 @@ public class ConnectToMongo {
                 combine(pull(updateKey, new Document("$lt", updateValue))));
     }
 
+    @SneakyThrows
+    public void existsUserInMongo(){
+        MongoCollection<Document> collection = mongoClient.getDatabase("admin").getCollection("suppliers");
+        if (collection.find(eq("_id", new ObjectId("5bc9d7c16d73e41c008b4567"))).first() != null){
+            log.info("User {} exists in MongoDB");
+        } else {
+            log.info("User {} not exists in MongoDB");
+            throw new IOException("User not saved in MongoDB");
+        }
+
+        ArrayList col = collection.find(eq("_id", new ObjectId("5bc9d7c16d73e41c008b4567"))).into(new ArrayList<>());
+        log.info("Collection in MongoDB: {}", col);
+        log.info("Collection in MongoDB is empty: {}", col.isEmpty());
+    }
+
     public void updateUserInCentralMongo(String findKey, Object findValue, String updateKey, Object updateValue){
         MongoCollection<Document> collection = mongoClientCentralUsers.getDatabase("users").getCollection("users");
         collection.updateOne(
@@ -138,6 +156,30 @@ public class ConnectToMongo {
         collection.updateOne(
                 eq(findKey, new ObjectId((String) findValue)),
                 combine(set(updateKey, new ObjectId((String) updateValue))));
+    }
+
+    @SneakyThrows
+    public void existsAffiliateInCentralMongo(Integer partnerId){
+        MongoCollection<Document> collection = mongoClient.getDatabase("affiliates").getCollection("affiliates");
+        if (collection.find(eq("id", partnerId)).first() != null){
+            log.info("Affiliate {} exists in central MongoDB", partnerId);
+        } else {
+            log.info("Affiliate {} not exists in central MongoDB", partnerId);
+            throw new IOException("affiliate not saved in central MongoDB");
+        }
+    }
+
+    @SneakyThrows
+    public void existsAffiliateInMongo(Integer partnerId){
+        FindIterable<Document> iterable = mongoClient.getDatabase("admin")
+                .getCollection("partners").find(new Document("_id", partnerId));
+        if (iterable.first() != null) {
+            log.info("Affiliate {} exists in MongoDB", partnerId);
+        }
+        else {
+            log.info("Affiliate {} not exists in MongoDB", partnerId);
+            throw new IOException("affiliate not saved in MongoDB");
+        }
     }
 
     public String getFirstObjectFromMongo(String collection, String key) {

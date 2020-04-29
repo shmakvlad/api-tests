@@ -16,82 +16,82 @@ import java.util.List;
 @Generated("com.robohorse.robopojogenerator")
 public class Afiliate {
 
-	@JsonProperty("country")
-	private Object country;
+    @JsonProperty("country")
+    private Object country;
 
-	@JsonProperty("notes")
-	private String notes;
+    @JsonProperty("notes")
+    private String notes;
 
-	@JsonProperty("manager")
-	private Object manager;
+    @JsonProperty("manager")
+    private Object manager;
 
-	@JsonProperty("level")
-	private int level;
+    @JsonProperty("level")
+    private int level;
 
-	@JsonProperty("city")
-	private Object city;
+    @JsonProperty("city")
+    private Object city;
 
-	@JsonProperty("customFields")
-	private List<Object> customFields;
+    @JsonProperty("customFields")
+    private List<Object> customFields;
 
-	@JsonProperty("address_1")
-	private Object address1;
+    @JsonProperty("address_1")
+    private Object address1;
 
-	@JsonProperty("address_2")
-	private Object address2;
+    @JsonProperty("address_2")
+    private Object address2;
 
-	@JsonProperty("created_at")
-	private String createdAt;
+    @JsonProperty("created_at")
+    private String createdAt;
 
-	@JsonProperty("login")
-	private Object login;
+    @JsonProperty("login")
+    private Object login;
 
-	@JsonProperty("payment_systems")
-	private List<Object> paymentSystems;
+    @JsonProperty("payment_systems")
+    private List<Object> paymentSystems;
 
-	@JsonProperty("zip_code")
-	private Object zipCode;
+    @JsonProperty("zip_code")
+    private Object zipCode;
 
-	@JsonProperty("ref")
-	private Object ref;
+    @JsonProperty("ref")
+    private Object ref;
 
-	@JsonProperty("updated_at")
-	private String updatedAt;
+    @JsonProperty("updated_at")
+    private String updatedAt;
 
-	@JsonProperty("ref_percent")
-	private Object refPercent;
+    @JsonProperty("ref_percent")
+    private Object refPercent;
 
-	@JsonProperty("balance")
-	private Object balance;
+    @JsonProperty("balance")
+    private Object balance;
 
-	@JsonProperty("api_key")
-	private String apiKey;
+    @JsonProperty("api_key")
+    private String apiKey;
 
-	@JsonProperty("phone")
-	private Object phone;
+    @JsonProperty("phone")
+    private Object phone;
 
-	@JsonProperty("sub_accounts")
-	private List<Object> subAccounts;
+    @JsonProperty("sub_accounts")
+    private List<Object> subAccounts;
 
-	@JsonProperty("contactPerson")
-	private String contactPerson;
+    @JsonProperty("contactPerson")
+    private String contactPerson;
 
-	@JsonProperty("offersCount")
-	private int offersCount;
+    @JsonProperty("offersCount")
+    private int offersCount;
 
-	@JsonProperty("name")
-	private Object name;
+    @JsonProperty("name")
+    private Object name;
 
-	@JsonProperty("id")
-	private int id;
+    @JsonProperty("id")
+    private int id;
 
-	@JsonProperty("email")
-	private String email;
+    @JsonProperty("email")
+    private String email;
 
-	@JsonProperty("status")
-	private String status;
+    @JsonProperty("status")
+    private String status;
 
-	@JsonProperty("password")
-	private String password;
+    @JsonProperty("password")
+    private String password;
 
 }

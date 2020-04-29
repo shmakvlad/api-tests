@@ -13,7 +13,7 @@ public class Constans {
     public static class Hosts{
         public static String STAGE_URL = "https://api-staging.affise.com";
         public static String DEV_URL = "http://api.dev.affise.com";
-        public static String GO_API_URL = "http://10.201.0.80:32835";
+        public static String GO_API_URL = "http://localhost:50603";
     }
 
     public static class Path{
@@ -24,7 +24,7 @@ public class Constans {
 
     public static class User{
         public static String ROOT = "f87d35d9e7ed3fe153ce95b259133019";
-        public static String ADMIN = "e8abca64a06e36ed954ffa8b45d7887e";
+        public static String ADMIN = "6a727599418159246637ac9274c06dbc";
         public static String AFFILIATE = "f87d35d9e7ed3fe153ce95b259133019";
         public static String SALES = "f87d35d9e7ed3fe153ce95b259133019";
     }
