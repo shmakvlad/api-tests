@@ -46,6 +46,13 @@ public class AffiliateApiService extends PhpApiService {
                 .when().post("/affiliates"));
     }
 
+    public AssertableResponse createGoAffiliate(Object requestBody, String token) {
+        return new AssertableResponse(goSetUp()
+                .header("Authorization", "Bearer " + token)
+                .body(requestBody)
+                .when().post("/affiliates"));
+    }
+
 }
 
 

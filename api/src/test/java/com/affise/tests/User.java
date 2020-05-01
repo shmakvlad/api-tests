@@ -1,6 +1,7 @@
 package com.affise.tests;
 
 import com.affise.api.annotations.Positive;
+import com.affise.api.services.AffiliateApiService;
 import com.affise.api.services.UserApiService;
 import org.testng.annotations.Test;
 
@@ -11,11 +12,14 @@ import static com.affise.api.conditions.Conditions.statusCode;
 import static com.affise.api.constans.Constans.User.ADMIN;
 import static com.affise.api.constans.Constans.UserType.ROLE_ADMIN;
 import static com.affise.api.generatedata.GenerateUser.generateUserWithReqFields;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.Matchers.emptyOrNullString;
+import static org.hamcrest.Matchers.not;
 
 public class User {
 
     private final UserApiService userApiService = new UserApiService();
+    private final AffiliateApiService affiliateApiService = new AffiliateApiService();
 
     @Positive
     @Test(description = "Can create user with required fields")

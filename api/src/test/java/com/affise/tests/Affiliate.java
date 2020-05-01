@@ -13,6 +13,8 @@ import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.core.DockerClientBuilder;
 import io.restassured.response.Response;
 import lombok.SneakyThrows;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -24,6 +26,7 @@ import static com.affise.api.config.Config.getConfig;
 import static com.affise.api.generatedata.Generations.*;
 import static com.affise.api.payloads.Go.Affiliates.AffiliateGo.showAllProps;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.emptyOrNullString;
 import static org.hamcrest.Matchers.not;
 import static org.testng.Assert.assertTrue;
@@ -114,7 +117,6 @@ public class Affiliate {
 
     @Test
     public void createAffiliateAsPojo(){
-
     // Generate data
         Map<String, Object> affiliate = new HashMap<>();
         affiliate.put("email", generateEmail());
@@ -131,6 +133,26 @@ public class Affiliate {
 
     // Clear data
         connectToMongo.removeAffiliateById(partner.partner().id());
+    }
+
+
+    @SneakyThrows
+    @Test(description = "Can create affiliate with required fields")
+    public void createAffiliateJsonSimple() {
+        JSONObject body = new JSONObject();
+        body.put("email", generateEmail());
+        body.put("password", generatePassword());
+        body.put("name", generateFirstName());
+        body.put("affiliate_manager_id", "507f1f77bcf86cd799439013");
+        body.put("status", "active");
+
+        JSONObject response = (JSONObject) new JSONParser().parse(affiliateApiService.createGoAffiliate(body, getConfig().token())
+                .shouldHave(statusCode(200)).getResponse().asString());
+
+        assertThat(body.get("email"), equalTo(response.get("email")));
+        assertThat(body.get("name"), equalTo(response.get("name")));
+        assertThat(body.get("status"), equalTo(response.get("status")));
+        assertThat(body.get("affiliate_manager_id"), equalTo(response.get("affiliate_manager_id")));
     }
 
 
