@@ -22,8 +22,6 @@ public class Offer {
     private final ConnectToMongo connectToMongo = setUpMongo();
     private final ConnectToMySql connectToMySql = setUpMySql();
 
-
-
     @BeforeSuite
     public ConnectToMySql setUpMySql(){ return new ConnectToMySql(); }
 
@@ -33,11 +31,11 @@ public class Offer {
     @BeforeClass
     public ConnectToMongo setUpMongo(){ return new ConnectToMongo(); }
 
-    @BeforeMethod
-    public void beforeMethod(){}
-
     @BeforeGroups("Offer")
     public void beforeGroup(){}
+
+    @BeforeMethod
+    public void beforeMethod(){}
 
 
     @DataProvider(name = "Create Offer")
@@ -101,8 +99,60 @@ public class Offer {
     }
 
 
+    @DataProvider(name = "Create Offer Args")
+    public static Object[][] example() {
+
+        CapsItem capsItem1 = new CapsItem().affiliates(Arrays.asList(1, 2)).affiliateType("exact").timeframe("day").type("clicks").goalType("all").resetToValue(32).value(0).isRemaining(true);
+        CapsItem capsItem2 = new CapsItem().affiliates(Collections.emptyList()).affiliateType("all").timeframe("day").type("clicks").goalType("all").resetToValue(100).value(0).isRemaining(true);
+        CapsItem capsItem3 = new CapsItem().affiliateType("all").timeframe("day").type("clicks").goalType("all").resetToValue(0).value(44).isRemaining(false);
+
+        return new Object[][]{
+                {11, true, "http://www.google.com", Arrays.asList(), capsItem1, capsItem2, capsItem3},
+                {12, false, "http://www.yandex.ru", Arrays.asList(), capsItem1, capsItem2},
+                {24, true, "http://www.w3schools.com", Collections.emptyList(), capsItem3}
+        };
+    }
+
+    @Positive
+    @SneakyThrows
+    @Test(description = "User can create offer", priority = 1, dataProvider = "Create Offer Args", groups = "Offer")
+    public void createOfferGoArgs(Integer payouts, Boolean uniqueIp, String previewUrl, List categories, CapsItem...capsItem){
+
+        OfferGo request = new OfferGo()
+                .title(generateFirstName())
+                .trackingUrl(generateUrl())
+                .previewUrl(previewUrl)
+                .advertiserId("5eaacff96d1bda817c1b6fa4")
+                .top(true).uniqueIp(uniqueIp)
+                .categories(categories)
+                .allowedIps(generateList("192.168.100.11", "216.58.215.110"))
+                .description(new Description().en("description").ru("информация"))
+                .landings(generateList(
+                        new LandingsItem()
+                                .previewUrl("https://google.com").title("Search").trackingUrl("dev.affise.com").type("landing"),
+                        new LandingsItem()
+                                .previewUrl("https://yandex.ru").title("Search").trackingUrl("dev.affise.com").type("prelanding")))
+                .payouts(Arrays.asList(
+                        new PayoutsItem()
+                                .affiliates(Arrays.asList(1, 2)).goalTitle("hello").goalValue("world")
+                                .currency("USD").paymentType("percent").total(12).payouts(payouts)))
+                .caps(
+                        new Caps()
+                                .conversionStatus(Arrays.asList("confirmed", "pending", "declined", "hold", "not_found"))
+                                .currency("USD").timezone("UTC")
+                                .caps(Arrays.asList(capsItem)));
+
+        OfferGo response = offerApiService.createGoOffer(request, getConfig().token())
+                .shouldHave(statusCode(200))
+                .asPojo(OfferGo.class);
+    }
+
+
     @AfterMethod
     public void afterMethod(){}
+
+    @AfterGroups("Offer")
+    public void afterGroup(){}
 
     @AfterClass
     public void cleanMongo(){ connectToMongo.closeConnection(); }
@@ -112,8 +162,5 @@ public class Offer {
 
     @AfterSuite
     public void cleanMySql(){ connectToMySql.closeConnection(); }
-
-    @AfterGroups("Offer")
-    public void afterGroup(){}
 
 }
