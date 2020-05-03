@@ -22,7 +22,7 @@ public class User {
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
 
     @Positive
-    @Test(description = "Can create user with required fields")
+    @Test(description = "Can create user with required fields", dependsOnGroups = {"Offer management"})
     public void createUser() {
         // Data generation
         Map user = generateUserWithReqFields(ROLE_ADMIN);

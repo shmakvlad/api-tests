@@ -16,6 +16,7 @@ import static com.affise.api.conditions.Conditions.statusCode;
 import static com.affise.api.config.Config.getConfig;
 import static com.affise.api.generatedata.Generations.*;
 
+@Test(groups="Offer management")
 public class Offer {
 
     private final OfferApiService offerApiService = new OfferApiService();
@@ -38,7 +39,8 @@ public class Offer {
     public void beforeMethod(){}
 
 
-    @DataProvider(name = "Create Offer")
+
+    @DataProvider(name = "Create Offer", parallel = false)
     public static Object[][] examples() {
 
         CapsItem capsItem2 = new CapsItem().affiliates(Collections.emptyList()).affiliateType("all")
@@ -57,9 +59,8 @@ public class Offer {
         };
     }
 
-    @Positive
-    @SneakyThrows
-    @Test(description = "User can create offer", priority = 1, dataProvider = "Create Offer", groups = "Offer")
+    @Positive @SneakyThrows
+    @Test(description = "User can create offer", priority = 1, dataProvider = "Create Offer", groups = "Offer", testName = "create offer")
     public void createOfferGo(Integer payouts, Boolean uniqueIp, String previewUrl, List categories, CapsItem capsItem){
 
         OfferGo request = new OfferGo()
@@ -99,7 +100,7 @@ public class Offer {
     }
 
 
-    @DataProvider(name = "Create Offer Args")
+    @DataProvider(name = "Create Offer Args", parallel = true)
     public static Object[][] example() {
 
         CapsItem capsItem1 = new CapsItem().affiliates(Arrays.asList(1, 2)).affiliateType("exact").timeframe("day").type("clicks").goalType("all").resetToValue(32).value(0).isRemaining(true);
@@ -113,9 +114,10 @@ public class Offer {
         };
     }
 
-    @Positive
-    @SneakyThrows
-    @Test(description = "User can create offer", priority = 1, dataProvider = "Create Offer Args", groups = "Offer")
+    @Positive @SneakyThrows
+    @Test(description = "User can create offer", priority = 1, dataProvider = "Create Offer Args",
+            groups = "Offer", invocationCount = 3, invocationTimeOut = 10000,
+            expectedExceptions = {ClassNotFoundException.class}, enabled = false)
     public void createOfferGoArgs(Integer payouts, Boolean uniqueIp, String previewUrl, List categories, CapsItem...capsItem){
 
         OfferGo request = new OfferGo()
@@ -145,7 +147,33 @@ public class Offer {
         OfferGo response = offerApiService.createGoOffer(request, getConfig().token())
                 .shouldHave(statusCode(200))
                 .asPojo(OfferGo.class);
+
+        throw new ClassNotFoundException();
     }
+
+
+    @DataProvider(name = "Create Offer Smoke")
+    public static Object[][] exampleData() {
+        return new Object[][]{{"http://www.google.com"}, {"http://www.yandex.ru"}, {"http://www.w3schools.com"}};
+    }
+
+    @Positive @SneakyThrows
+    @Test(description = "User can create offer with required fields", groups = "Offer",
+            priority = 1, alwaysRun = true, dataProvider = "Create Offer Smoke", timeOut = 2000, dependsOnMethods = {"createOfferGo"})
+    public void createOffer(String previewUrl) {
+
+        OfferGo request = new OfferGo()
+                .title(generateFirstName())
+                .trackingUrl(generateUrl())
+                .previewUrl(previewUrl)
+                .advertiserId("5eaacff96d1bda817c1b6fa4")
+                .top(true);
+
+        OfferGo response = offerApiService.createGoOffer(request, getConfig().token())
+                .shouldHave(statusCode(200))
+                .asPojo(OfferGo.class);
+    }
+
 
 
     @AfterMethod

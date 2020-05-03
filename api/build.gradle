@@ -33,7 +33,11 @@ dependencies {
 
 test {
     useTestNG()
-    
+
+//    {
+//        includeGroups 'Offer'
+//    }
+                
     maxParallelForks = 4
     failFast = false
     forkEvery = 4
@@ -47,5 +51,4 @@ test {
     test.outputs.upToDateWhen{
         false
     }
-    
 }
