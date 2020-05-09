@@ -24,7 +24,7 @@ public class Groovy {
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
 
     @Positive @Test(description = "Get Affiliates")
-    public void groovy() {
+    public void groovy1() {
 
         Response response = affiliateApiService.getAffiliates().getResponse();
 
@@ -51,7 +51,7 @@ public class Groovy {
     }
 
     @Test @Positive
-    public void Hamcrest_JsonPath(){
+    public void groovy2(){
         given()
             .headers(API_KEY, ADMIN)
             .queryParam("country[]", "BY","US")
@@ -71,7 +71,7 @@ public class Groovy {
     }
 
     @Test @Positive
-    public void asString_JsonPath(){
+    public void groovy3(){
         String response = given().headers(API_KEY, ADMIN).when().get("/3.1/regions?country[]=BY&country[]=US").asString();
         int sumOfAllAuthorLengths = from(response).getInt("regions.country_code*.length().sum()");
         assertThat(sumOfAllAuthorLengths, is(124));

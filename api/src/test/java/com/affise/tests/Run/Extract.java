@@ -31,7 +31,7 @@ public class Extract extends Config {
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
 
     @Test @Positive
-    public void deserialization(){
+    public void jsonPath1(){
         try {
             Response response =
                 given().spec(phpApiReqSpec)
@@ -111,7 +111,7 @@ public class Extract extends Config {
     }
 
     @Test @Positive
-    public void Ger_Affiliate_Goapi2(){
+    public void jsonPath2(){
         Response response = given().headers("Authorization", "Bearer miMFgpoACl84V2PxWyZqd6Pg0FAajh3pe-ALUlm4_Yg._6GC8ffiR3tZCYKI2KeuOeQu6pe_jOLONwIgI7jzLTk")
                 .when().get("http://10.201.0.80:25292/4.0/affiliates?client_id=3").then().extract().response();
         List<HashMap<String, Object>> jsonString = response.path("affiliates");
@@ -122,7 +122,7 @@ public class Extract extends Config {
     }
 
     @Test @Positive
-    public void jsonPath(){
+    public void jsonPath3(){
         Map map = given().headers(API_KEY, ADMIN).when().get("/3.1/regions?country[]=BY").path("pagination");
 
         String response = given().headers(API_KEY, ADMIN).when().get("/3.1/regions?country[]=BY").asString();
