@@ -26,7 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 
-public class Deserialization extends Config {
+public class Extract extends Config {
 
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
 
