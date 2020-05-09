@@ -1,0 +1,211 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "status",
+    "partner",
+    "id"
+  ],
+  "properties": {
+    "status": {
+      "type": "number"
+    },
+    "partner": {
+      "type": "object",
+      "required": [
+        "id",
+        "created_at",
+        "updated_at",
+        "email",
+        "login",
+        "ref_percent",
+        "name",
+        "notes",
+        "manager",
+        "status",
+        "level",
+        "payment_systems",
+        "customFields",
+        "balance",
+        "offersCount",
+        "api_key",
+        "address_1",
+        "address_2",
+        "city",
+        "country",
+        "zip_code",
+        "phone",
+        "ref",
+        "sub_accounts",
+        "contactPerson"
+      ],
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "login": {
+          "type": "null"
+        },
+        "ref_percent": {
+          "type": "null"
+        },
+        "name": {
+          "type": "null"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "manager": {
+          "type": "null"
+        },
+        "status": {
+          "type": "string"
+        },
+        "level": {
+          "type": "number"
+        },
+        "payment_systems": {
+          "type": "array"
+        },
+        "customFields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "value",
+              "label",
+              "id"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "id": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "balance": {
+          "type": "object",
+          "required": [
+            "RUB",
+            "USD",
+            "EUR"
+          ],
+          "properties": {
+            "RUB": {
+              "type": "object",
+              "required": [
+                "balance",
+                "hold",
+                "available"
+              ],
+              "properties": {
+                "balance": {
+                  "type": "number"
+                },
+                "hold": {
+                  "type": "number"
+                },
+                "available": {
+                  "type": "number"
+                }
+              }
+            },
+            "USD": {
+              "type": "object",
+              "required": [
+                "balance",
+                "hold",
+                "available"
+              ],
+              "properties": {
+                "balance": {
+                  "type": "number"
+                },
+                "hold": {
+                  "type": "number"
+                },
+                "available": {
+                  "type": "number"
+                }
+              }
+            },
+            "EUR": {
+              "type": "object",
+              "required": [
+                "balance",
+                "hold",
+                "available"
+              ],
+              "properties": {
+                "balance": {
+                  "type": "number"
+                },
+                "hold": {
+                  "type": "number"
+                },
+                "available": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "offersCount": {
+          "type": "number"
+        },
+        "api_key": {
+          "type": "string"
+        },
+        "address_1": {
+          "type": "null"
+        },
+        "address_2": {
+          "type": "null"
+        },
+        "city": {
+          "type": "null"
+        },
+        "country": {
+          "type": "null"
+        },
+        "zip_code": {
+          "type": "null"
+        },
+        "phone": {
+          "type": "null"
+        },
+        "ref": {
+          "type": "null"
+        },
+        "sub_accounts": {
+          "type": "array"
+        },
+        "contactPerson": {
+          "type": "null"
+        }
+      }
+    },
+    "id": {
+      "type": "number"
+    }
+  }
+}

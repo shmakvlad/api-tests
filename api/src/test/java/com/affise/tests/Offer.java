@@ -115,7 +115,7 @@ public class Offer {
     }
 
     @Positive @SneakyThrows
-    @Test(description = "User can create offer", priority = 1, dataProvider = "Create Offer Args",
+    @Test(description = "User can create offer", priority = 2, dataProvider = "Create Offer Args",
             groups = "Offer", invocationCount = 3, invocationTimeOut = 10000,
             expectedExceptions = {ClassNotFoundException.class}, enabled = false)
     public void createOfferGoArgs(Integer payouts, Boolean uniqueIp, String previewUrl, List categories, CapsItem...capsItem){
