@@ -59,6 +59,12 @@ public class AffiliateApiService extends PhpApiService {
                 .when().get("/admin/partners"));
     }
 
+    public AssertableResponse getAffiliate(Integer partnerId) {
+        return new AssertableResponse(setUp()
+                .header(API_KEY, ADMIN)
+                .when().get("/admin/partner/" + partnerId));
+    }
+
 }
 
 

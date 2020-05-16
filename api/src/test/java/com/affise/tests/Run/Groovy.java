@@ -39,7 +39,8 @@ public class Groovy {
         Integer sumFind = response.path("partners.findAll {it}.id.sum()");
 
         String email = response.path("partners.find {it.id == 142}.email");
-        Map<String, ?> findOne = response.path("partners.find { it.email == '80@gmail.com' }");
+        Map<String, ?> findOne = response.path("partners.find { it.email == '123@gmail.com' }");
+        List<Map<String, ?>> findAll = response.path("partners.findAll { it }");
 
         List<String> listStatus = response.path("partners.findAll { it.id > 141 }.status");
         ArrayList<Map<String, ?>> map = response.path("partners.findAll { it.id > 186 }");

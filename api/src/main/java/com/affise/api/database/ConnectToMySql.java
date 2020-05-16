@@ -41,10 +41,27 @@ public class ConnectToMySql {
     }
 
     @SneakyThrows
+    public void createAffiliate(String...query) {
+        for (String q : query){
+            statement.executeUpdate(q);
+            log.info("Affiliate successfully create in MySql");
+        }
+    }
+
+    @SneakyThrows
     public void deleteAffiliateFromMySql(int partnerId) {
         String query = "DELETE FROM partner WHERE id = " + partnerId;
         statement.executeUpdate(query);
         log.info("Affiliate {} successfully delete from MySql", partnerId);
+    }
+
+    @SneakyThrows
+    public void deleteAffiliates(Integer...partnerId) {
+        for (Integer i : partnerId){
+            String query = "DELETE FROM partner WHERE id = " + i;
+            statement.executeUpdate(query);
+            log.info("Affiliate {} successfully delete from MySql", i);
+        }
     }
 
     @SneakyThrows
