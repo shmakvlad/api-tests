@@ -61,36 +61,34 @@ public class ReadMongoDB {
 
     @SneakyThrows @Test
     public void jsonToMongoDB(){
-        String json = "{\n" +
-                "    \"_id\" : ObjectId(\"5ed2cdca4d01fb781fc1aa3b\"),\n" +
-                "    \"sub_account_2_except\" : false,\n" +
-                "    \"country\" : \"\",\n" +
-                "    \"note\" : \"\",\n" +
-                "    \"vat_code\" : \"\",\n" +
-                "    \"address2\" : \"\",\n" +
-                "    \"city\" : \"\",\n" +
-                "    \"address1\" : \"\",\n" +
-                "    \"created_at\" : ISODate(\"2020-05-30T21:19:06.939Z\"),\n" +
-                "    \"secure_code\" : \"\",\n" +
-                "    \"title\" : \"Atletiko\",\n" +
-                "    \"client_id\" : NumberLong(99999),\n" +
-                "    \"sub_account_1_except\" : false,\n" +
-                "    \"url\" : \"\",\n" +
-                "    \"zip_code\" : \"\",\n" +
-                "    \"skype\" : \"\",\n" +
-                "    \"sub_account_2\" : \"\",\n" +
-                "    \"sub_account_1\" : \"\",\n" +
-                "    \"updated_at\" : ISODate(\"2020-12-12T09:12:12.123Z\"),\n" +
-                "    \"user_id\" : ObjectId(\"5e902dbe5bc5ef95a4696d15\"),\n" +
-                "    \"contact\" : \"\",\n" +
-                "    \"email\" : \"\"\n" +
+        String json = "{" +
+                "    '_id' : ObjectId('5ed2cdca4d01fb781fc1aa16'), " +
+                "    'sub_account_2_except' : false, " +
+                "    'country' : '', " +
+                "    'note' : '', " +
+                "    'vat_code' : '', " +
+                "    'address2' : '', " +
+                "    'city' : '', " +
+                "    'address1' : '', " +
+                "    'created_at' : ISODate('2020-05-30T21:19:06.939Z'), " +
+                "    'secure_code' : '', " +
+                "    'title' : 'Atletiko', " +
+                "    'client_id' : NumberLong(99999), " +
+                "    'sub_account_1_except' : false, " +
+                "    'url' : '', " +
+                "    'zip_code' : '', " +
+                "    'skype' : '', " +
+                "    'sub_account_2' : '', " +
+                "    'sub_account_1' : '', " +
+                "    'updated_at' : ISODate('2020-12-12T09:12:12.123Z'), " +
+                "    'user_id' : ObjectId('5e902dbe5bc5ef95a4696d15'), " +
+                "    'contact' : '', " +
+                "    'email' : '' " +
                 "}";
 
         Document doc = Document.parse(json);
-
         MongoCollection<Document> collection = connectToMongo
                 .getMongoClient().getDatabase("advertisers").getCollection("advertisers");
-
         collection.insertOne(doc);
     }
 
