@@ -24,7 +24,7 @@ public class Constans {
 
     public static class User{
         public static String ROOT = "f87d35d9e7ed3fe153ce95b259133019";
-        public static String ADMIN = "6a727599418159246637ac9274c06dbc";
+        public static String ADMIN = "e98ae15a9dd22ac41c685cef78bab976";
         public static String AFFILIATE = "f87d35d9e7ed3fe153ce95b259133019";
         public static String SALES = "f87d35d9e7ed3fe153ce95b259133019";
     }

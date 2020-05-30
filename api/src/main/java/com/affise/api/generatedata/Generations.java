@@ -3,8 +3,10 @@ package com.affise.api.generatedata;
 import com.affise.api.payloads.Go.Offers.LandingsItem;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
+import lombok.SneakyThrows;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static com.affise.api.config.Config.getConfig;
@@ -62,6 +64,13 @@ public class Generations {
 
     public static List generateList(LandingsItem... field) {
         return Arrays.asList(field);
+    }
+
+    @SneakyThrows
+    public static Date toISODate(String rgExp){
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        Date date = inputFormat.parse(rgExp);
+        return date;
     }
 
 }

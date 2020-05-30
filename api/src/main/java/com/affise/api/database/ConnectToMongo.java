@@ -1,5 +1,6 @@
 package com.affise.api.database;
 
+import com.affise.api.payloads.MongoDB.MongoAdvertiser;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.FindIterable;
@@ -12,17 +13,19 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.bson.Document;
+import org.bson.UuidRepresentation;
 import org.bson.types.ObjectId;
+import org.mongojack.JacksonMongoCollection;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.affise.api.config.Config.getConfig;
 import static com.affise.api.constans.Constans.DatabaseNames.LOCAL_DB;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.*;
+import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -45,7 +48,7 @@ public class ConnectToMongo {
         mongoClient = MongoClients.create(
                 MongoClientSettings.builder()
                         .applyToClusterSettings(builder ->
-                                builder.hosts(Arrays.asList(
+                                builder.hosts(asList(
                                         new ServerAddress(host, port))))
                         .build());
         return mongoClient;
@@ -72,6 +75,21 @@ public class ConnectToMongo {
         long d = collection.deleteOne(eq(key, new ObjectId((String) value))).getDeletedCount();
         assertThat(d, equalTo(1L));
         log.info("Object {} successfully delete from MongoDB", value);
+    }
+
+    public void addAdvertisersToMongoDB(MongoAdvertiser... mongoAdvertisers){
+        MongoCollection<MongoAdvertiser> collection = JacksonMongoCollection.builder()
+                .build(mongoClient, "advertisers", "advertisers", MongoAdvertiser.class, UuidRepresentation.STANDARD);
+        collection.insertMany(asList(mongoAdvertisers));
+    }
+
+    public void removeObjectId(String dbName, String colName, String key, ObjectId...value) {
+        MongoCollection<Document> collection = mongoClient.getDatabase(dbName).getCollection(colName);
+        for (ObjectId id : value){
+            long d = collection.deleteOne(eq(key, id)).getDeletedCount();
+            assertThat(d, equalTo(1L));
+            log.info("Object {} successfully delete from MongoDB", id);
+        }
     }
 
     public MongoCollection<Document> getCollection(String colName){
