@@ -21,13 +21,14 @@ import org.testng.annotations.Test;
 
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.affise.api.conditions.Conditions.bodyField;
 import static com.affise.api.conditions.Conditions.statusCode;
 import static com.affise.api.config.Config.getConfig;
 import static com.affise.api.constans.Constans.User.ADMIN;
-import static com.affise.api.generatedata.Generations.generateEmail;
-import static com.affise.api.generatedata.Generations.toISODate;
+import static com.affise.api.generatedata.Generations.*;
 import static java.util.Arrays.asList;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
@@ -90,6 +91,53 @@ public class ReadMongoDB {
         MongoCollection<Document> collection = connectToMongo
                 .getMongoClient().getDatabase("advertisers").getCollection("advertisers");
         collection.insertOne(doc);
+    }
+
+    @Test
+    public void insertNewDocumentMap(){
+        Map advertiserMap = new HashMap();
+        advertiserMap.put("title", "Mallorca");
+        advertiserMap.put("country", "ES");
+        advertiserMap.put("skype", "Spain");
+
+        Document advertiser = new Document(advertiserMap);
+        MongoCollection<Document> collection = connectToMongo
+                .getMongoClient().getDatabase("advertisers").getCollection("advertisers");
+
+        collection.insertOne(advertiser);
+    }
+
+    @Test
+    public void insertNewDocument(){
+        Document advertiser = new Document("title", "Valencia")
+                .append("country", "ES")
+                .append("email", generateEmail())
+                .append("url", generateUrl())
+                .append("note", null)
+                .append("client_id", 99999L)
+                .append("sub_account_1", "")
+                .append("sub_account_2", "")
+                .append("sub_accounts", new Document()
+                        .append("1", new Document()
+                                .append("except", true)
+                                .append("value", "sub1"))
+                        .append("2", new Document()
+                                .append("except", false)
+                                .append("value", "sub2")))
+                .append("sub_account_1_except", false)
+                .append("sub_account_2_except", true)
+                .append("address1", "Picasso")
+                .append("address2", "49")
+                .append("user_id", "49")
+                .append("allowed_ip", asList("1.1.1.1","2.2.2.2"))
+                .append("disallowed_ip", Collections.emptyList())
+                .append("created_at", new Date())
+                .append("updated_at", toISODate("2020-07-07T20:01:01.789Z"));
+
+        MongoCollection<Document> collection = connectToMongo
+                .getMongoClient().getDatabase("advertisers").getCollection("advertisers");
+
+        collection.insertOne(advertiser);
     }
 
     @AfterClass
