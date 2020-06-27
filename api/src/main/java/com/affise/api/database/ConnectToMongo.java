@@ -41,7 +41,7 @@ public class ConnectToMongo {
 
     public ConnectToMongo() {
         this.mongoClient = MongoClients.create(getConfig().mongodb());
-        this.mongoClientCentralUsers = MongoClients.create(getConfig().mongodbCentralUsers());
+        this.mongoClientCentralUsers = MongoClients.create(getConfig().mongodbCentral());
     }
 
     public MongoClient connectToMongo(String host, int port){
@@ -79,12 +79,12 @@ public class ConnectToMongo {
 
     public void addAdvertisersToMongoDB(MongoAdvertiser... mongoAdvertisers){
         MongoCollection<MongoAdvertiser> collection = JacksonMongoCollection.builder()
-                .build(mongoClient, "advertisers", "advertisers", MongoAdvertiser.class, UuidRepresentation.STANDARD);
+                .build(mongoClientCentralUsers, "advertisers", "advertisers", MongoAdvertiser.class, UuidRepresentation.STANDARD);
         collection.insertMany(asList(mongoAdvertisers));
     }
 
     public void removeObjectId(String dbName, String colName, String key, ObjectId...value) {
-        MongoCollection<Document> collection = mongoClient.getDatabase(dbName).getCollection(colName);
+        MongoCollection<Document> collection = mongoClientCentralUsers.getDatabase(dbName).getCollection(colName);
         for (ObjectId id : value){
             long d = collection.deleteOne(eq(key, id)).getDeletedCount();
             assertThat(d, equalTo(1L));

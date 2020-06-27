@@ -154,7 +154,7 @@ public class ReadMongoDB {
     @SneakyThrows
     @Test(description = "Central Advertiser / Create via Jackson Pojo / There is way to save key with null/default values")
     public void createAdvertiserJacksonCentral() {
-        MongoClient mongoClient = MongoClients.create(getConfig().mongodb());
+        MongoClient mongoClient = MongoClients.create(getConfig().mongodbCentral());
         MongoCollection<MongoAdvertiser> collection = JacksonMongoCollection.builder()
                 .build(mongoClient, "advertisers", "advertisers", MongoAdvertiser.class, UuidRepresentation.STANDARD);
 
@@ -177,7 +177,7 @@ public class ReadMongoDB {
     public void createAdvertiserJackson() {
         MongoClient mongoClient = MongoClients.create(getConfig().mongodb());
         MongoCollection<AdvertiserMongoDB> collection = JacksonMongoCollection.builder()
-                .build(mongoClient, "admin", "suppliers", AdvertiserMongoDB.class, UuidRepresentation.STANDARD);
+                .build(mongoClient, "php-admin", "suppliers", AdvertiserMongoDB.class, UuidRepresentation.STANDARD);
 
         AdvertiserMongoDB advertiserMongoDB = new AdvertiserMongoDB()
                 .id(new ObjectId())
@@ -225,7 +225,7 @@ public class ReadMongoDB {
                 .build();
         MongoClient mongoClient = MongoClients.create(clientSettings);
 
-        MongoCollection<AdvertiserPogo> collection = mongoClient.getDatabase("admin")
+        MongoCollection<AdvertiserPogo> collection = mongoClient.getDatabase("php-admin")
                 .getCollection("suppliers", AdvertiserPogo.class);
 
         AdvertiserPogo advertiserMongoDB = new AdvertiserPogo()
