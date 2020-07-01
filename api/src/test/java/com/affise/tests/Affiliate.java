@@ -69,6 +69,7 @@ public class Affiliate {
 
     // Clear data
         connectToMongo.removeAffiliateById(affiliateObj.id());
+        connectToMongo.removeAffiliateByIdCentral(affiliateObj.id());
         connectToMySql.deleteAffiliateFromMySql(affiliateObj.id());
         dockerClient.restartContainerCmd("affisedev-memcached").exec();
     }

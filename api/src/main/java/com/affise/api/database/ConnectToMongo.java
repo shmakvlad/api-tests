@@ -37,11 +37,21 @@ public class ConnectToMongo {
 //    private MongoClient mongoClientBuilder = connectToMongo("localhost", 27017);
 
     private MongoClient mongoClient;
-    private MongoClient mongoClientCentralUsers;
+    private MongoClient mongoClientCentral;
+    private MongoClient mongoClientAdvertisers;
+    private MongoClient mongoClientOffers;
+    private MongoClient mongoClientAffiliates;
+    private MongoClient mongoClientSmartlinks;
+    private MongoClient mongoClientUsers;
 
     public ConnectToMongo() {
         this.mongoClient = MongoClients.create(getConfig().mongodb());
-        this.mongoClientCentralUsers = MongoClients.create(getConfig().mongodbCentral());
+        this.mongoClientCentral = MongoClients.create(getConfig().mongodbCentral());
+        this.mongoClientAdvertisers = MongoClients.create(getConfig().mongodbCentralAdvertisers());
+        this.mongoClientOffers = MongoClients.create(getConfig().mongodbCentralOffers());
+        this.mongoClientAffiliates = MongoClients.create(getConfig().mongodbCentralAffiliates());
+        this.mongoClientSmartlinks = MongoClients.create(getConfig().mongodbCentralSmartlinks());
+        this.mongoClientUsers = MongoClients.create(getConfig().mongodbCentralUsers());
     }
 
     public MongoClient connectToMongo(String host, int port){
@@ -70,6 +80,12 @@ public class ConnectToMongo {
         log.info("Affiliates {} successfully delete from MongoDB", id);
     }
 
+    public void removeAffiliateByIdCentral(Object id) {
+        MongoCollection<Document> collection = mongoClientAffiliates.getDatabase("affiliates").getCollection("affiliates");
+        assertThat(collection.deleteOne(eq("id", id)).getDeletedCount(), equalTo(1L));
+        log.info("Affiliates {} successfully delete from MongoDB", id);
+    }
+
     public void removeObject(String dbName, String colName, String key, Object value) {
         MongoCollection<Document> collection = mongoClient.getDatabase(dbName).getCollection(colName);
         long d = collection.deleteOne(eq(key, new ObjectId((String) value))).getDeletedCount();
@@ -79,12 +95,12 @@ public class ConnectToMongo {
 
     public void addAdvertisersToMongoDB(MongoAdvertiser... mongoAdvertisers){
         MongoCollection<MongoAdvertiser> collection = JacksonMongoCollection.builder()
-                .build(mongoClientCentralUsers, "advertisers", "advertisers", MongoAdvertiser.class, UuidRepresentation.STANDARD);
+                .build(mongoClientCentral, "advertisers", "advertisers", MongoAdvertiser.class, UuidRepresentation.STANDARD);
         collection.insertMany(asList(mongoAdvertisers));
     }
 
     public void removeObjectId(String dbName, String colName, String key, ObjectId...value) {
-        MongoCollection<Document> collection = mongoClientCentralUsers.getDatabase(dbName).getCollection(colName);
+        MongoCollection<Document> collection = mongoClientCentral.getDatabase(dbName).getCollection(colName);
         for (ObjectId id : value){
             long d = collection.deleteOne(eq(key, id)).getDeletedCount();
             assertThat(d, equalTo(1L));
@@ -104,7 +120,7 @@ public class ConnectToMongo {
     }
 
     public void updateUserInMongo(String findKey, Object findValue, String updateKey, Object updateValue){
-        MongoCollection<Document> collection = mongoClientCentralUsers.getDatabase("users").getCollection("users");
+        MongoCollection<Document> collection = mongoClientCentral.getDatabase("users").getCollection("users");
         collection.updateOne(
                 eq(findKey, new ObjectId((String) findValue)),
                 combine(set(updateKey, updateValue)));
@@ -142,21 +158,21 @@ public class ConnectToMongo {
     }
 
     public void updateUserInCentralMongo(String findKey, Object findValue, String updateKey, Object updateValue){
-        MongoCollection<Document> collection = mongoClientCentralUsers.getDatabase("users").getCollection("users");
+        MongoCollection<Document> collection = mongoClientCentral.getDatabase("users").getCollection("users");
         collection.updateOne(
                 eq(findKey, new ObjectId((String) findValue)),
                 combine(set(updateKey, updateValue)));
     }
 
     public void updateUserInCentralMongoAddToSet(String findKey, Object findValue, String updateKey, Object updateValue){
-        MongoCollection<Document> collection = mongoClientCentralUsers.getDatabase("users").getCollection("users");
+        MongoCollection<Document> collection = mongoClientCentral.getDatabase("users").getCollection("users");
         collection.updateOne(
                 eq(findKey, new ObjectId((String) findValue)),
                 combine(addToSet(updateKey, updateValue)));
     }
 
     public void updateUserInCentralMongoUnset(String findKey, Object findValue, String updateKey){
-        MongoCollection<Document> collection = mongoClientCentralUsers.getDatabase("users").getCollection("users");
+        MongoCollection<Document> collection = mongoClientCentral.getDatabase("users").getCollection("users");
         collection.findOneAndUpdate(
                 eq(findKey, new ObjectId((String) findValue)),
                 combine(unset(updateKey)));
@@ -178,7 +194,7 @@ public class ConnectToMongo {
 
     @SneakyThrows
     public void existsAffiliateInCentralMongo(Integer partnerId){
-        MongoCollection<Document> collection = mongoClient.getDatabase("affiliates").getCollection("affiliates");
+        MongoCollection<Document> collection = mongoClientAffiliates.getDatabase("affiliates").getCollection("affiliates");
         if (collection.find(eq("id", partnerId)).first() != null){
             log.info("Affiliate {} exists in central MongoDB", partnerId);
         } else {

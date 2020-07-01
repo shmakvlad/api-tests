@@ -3,7 +3,7 @@ package com.affise.api.constans;
 public class Constans {
 
     public static class Run{
-        public static String host = Hosts.DEV_URL;
+        public static String host = Hosts.STAGE_URL;
         public static String goapihost = Hosts.GO_API_URL;
         public static String apipath = Path.API_PATH;
         public static String goapipath = Path.GO_API_PATH;
@@ -23,10 +23,10 @@ public class Constans {
     }
 
     public static class User{
-        public static String ROOT = "f87d35d9e7ed3fe153ce95b259133019";
-        public static String ADMIN = "e98ae15a9dd22ac41c685cef78bab976";
-        public static String AFFILIATE = "f87d35d9e7ed3fe153ce95b259133019";
-        public static String SALES = "f87d35d9e7ed3fe153ce95b259133019";
+        public static String ROOT = "c8f1d835f4246ee67d33d449b76c09609e8327b5";
+        public static String ADMIN = "c8f1d835f4246ee67d33d449b76c09609e8327b5";
+        public static String AFFILIATE = "c8f1d835f4246ee67d33d449b76c09609e8327b5";
+        public static String SALES = "c8f1d835f4246ee67d33d449b76c09609e8327b5";
     }
 
     public static class UserType{
