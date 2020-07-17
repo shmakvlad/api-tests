@@ -67,7 +67,7 @@ public class Offer {
                 .title(generateFirstName())
                 .trackingUrl(generateUrl())
                 .previewUrl(previewUrl)
-                .advertiserId("5eaacff96d1bda817c1b6fa4")
+                .advertiserId("5f104a311d82e1ee17252ed8")
                 .top(true).uniqueIp(uniqueIp)
                 .categories(categories)
                 .allowedIps(generateList("192.168.100.11", "216.58.215.110"))

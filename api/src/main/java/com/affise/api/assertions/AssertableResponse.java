@@ -1,6 +1,7 @@
 package com.affise.api.assertions;
 
 import com.affise.api.conditions.Condition;
+import com.affise.api.payloads.Go.Affiliates.AffiliateBuilder;
 import com.affise.api.payloads.Php.Afiliate;
 import com.affise.api.payloads.Php.Offers.Offer;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -63,6 +64,13 @@ public class AssertableResponse {
         String json = response.asString();
         Offer offer = new ObjectMapper().readValue(jsonNode(json, "offer"), Offer.class);
         return offer;
+    }
+
+    @SneakyThrows
+    public AffiliateBuilder asAffiliateGoPojo(){
+        String json = response.asString();
+        AffiliateBuilder affiliate = new ObjectMapper().readValue(json, AffiliateBuilder.class);
+        return affiliate;
     }
 
 }

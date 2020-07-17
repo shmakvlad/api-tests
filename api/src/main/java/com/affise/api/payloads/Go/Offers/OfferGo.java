@@ -23,6 +23,13 @@ public class OfferGo{
 	@JsonProperty("notes")
 	private String notes;
 
+	@JsonProperty("schedule")
+	private String schedule;
+
+	@JsonProperty("consider_personal_targeting_only")
+	private String consider_personal_targeting_only;
+
+
 	@JsonProperty("plugins")
 	private List<Object> plugins;
 

@@ -3,6 +3,7 @@ package com.affise.tests;
 import com.affise.api.annotations.Positive;
 import com.affise.api.database.ConnectToMongo;
 import com.affise.api.database.ConnectToMySql;
+import com.affise.api.payloads.Go.Affiliates.AffiliateBuilder;
 import com.affise.api.payloads.Go.Affiliates.AffiliateGo;
 import com.affise.api.payloads.Php.Affiliates.Affiliates;
 import com.affise.api.payloads.Php.Afiliate;
@@ -29,6 +30,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.emptyOrNullString;
 import static org.hamcrest.Matchers.not;
+import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
 
 
@@ -154,6 +156,30 @@ public class Affiliate {
         assertThat(body.get("name"), equalTo(response.get("name")));
         assertThat(body.get("status"), equalTo(response.get("status")));
         assertThat(body.get("affiliate_manager_id"), equalTo(response.get("affiliate_manager_id")));
+    }
+
+
+    @Positive @SneakyThrows
+    @Test(description = "User can create affiliate with required fields with Builder pattern")
+    public void createAffiliateGoBuilderObject(){
+
+        AffiliateBuilder affiliateBuilderBody = AffiliateBuilder.builder()
+                .email(generateEmail())
+                .password(generatePassword())
+                .name(generateFirstName())
+                .status("active")
+                .build();
+
+        AffiliateBuilder response = affiliateApiService.createGoAffiliate(affiliateBuilderBody, getConfig().token())
+                .shouldHave(statusCode(200))
+                .shouldHave(bodyField("email", equalTo(affiliateBuilderBody.getEmail())))
+                .asAffiliateGoPojo();
+
+        assertNotNull(response);
+        assertThat(affiliateBuilderBody.getEmail(), equalTo(response.getEmail()));
+        assertThat(affiliateBuilderBody.getStatus().toLowerCase(), equalTo(response.getStatus().toLowerCase()));
+        assertThat(affiliateBuilderBody.getStatus().toLowerCase(), equalTo(response.getStatus().toLowerCase()));
+        assertThat(affiliateBuilderBody.getName(), equalTo(response.getName()));
     }
 
 
