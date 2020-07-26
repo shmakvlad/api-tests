@@ -1,5 +1,6 @@
 package com.affise.api.config;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.Filter;
@@ -23,7 +24,7 @@ public class Config {
         return config;
     }
 
-    public static final ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
+    public static final ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties(), System.getenv());
 
     public RequestSpecification phpApiReqSpec = new RequestSpecBuilder()
             .setBaseUri(getConfig().baseUrl())
@@ -54,7 +55,7 @@ public class Config {
 
     private List<Filter> getFilters(){
         if (getConfig().logging()){
-            return Arrays.asList(new RequestLoggingFilter(), new ResponseLoggingFilter());
+            return Arrays.asList(new RequestLoggingFilter(), new ResponseLoggingFilter(), new AllureRestAssured());
         }
         return Collections.emptyList();
     }

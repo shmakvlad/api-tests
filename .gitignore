@@ -35,3 +35,6 @@ out/
 *.iml
 *.ctxt
 api/src/logs
+.allure/
+target
+allure-results

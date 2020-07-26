@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Slf4j
 @Getter
 @Setter
+@ToString
 @Accessors(fluent = true)
 @RequiredArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
@@ -23,12 +25,14 @@ public class OfferGo{
 	@JsonProperty("notes")
 	private String notes;
 
+	@JsonProperty("bundle_id")
+	private String bundle_id;
+
 	@JsonProperty("schedule")
 	private String schedule;
 
 	@JsonProperty("consider_personal_targeting_only")
-	private String consider_personal_targeting_only;
-
+	private Boolean consider_personal_targeting_only;
 
 	@JsonProperty("plugins")
 	private List<Object> plugins;

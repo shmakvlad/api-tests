@@ -5,6 +5,7 @@ import com.affise.api.payloads.Go.Affiliates.AffiliateBuilder;
 import com.affise.api.payloads.Php.Afiliate;
 import com.affise.api.payloads.Php.Offers.Offer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Step;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class AssertableResponse {
 
     private final Response response;
 
+    @Step("then api response should have {condition}")
     public AssertableResponse shouldHave(Condition condition){
         if (getConfig().logging()){
             log.info("Check condition: {}", condition);

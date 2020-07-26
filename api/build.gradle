@@ -10,7 +10,7 @@ repositories {
 
 ext {
     restsAssuredVersion = '4.2.0'
-    testNgVersion = '7.1.0'
+    testNgVersion = '7.0.0'
 }
 
 dependencies {
@@ -26,6 +26,7 @@ dependencies {
     compile group: 'com.github.docker-java', name: 'docker-java', version: '3.1.5'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
     compile group: 'org.mongojack', name: 'mongojack', version: '4.0.1'
+    compile group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.13.5'
 
 //    compile group: 'com.github.java-json-tools', name: 'json-schema-validator', version: '2.2.13'
 //    compile group: 'io.rest-assured', name: 'json-schema-validator', version: '3.0.0'
@@ -40,21 +41,33 @@ dependencies {
 test {
     useTestNG()
 
+//    dependsOn 'cleanTest'
+//    systemProperties System.getProperties()
+
+//    include '**/*'
+//    include 'com/affise/tests/**'
+
 //    {
-//        includeGroups 'Offer'
+//        includeGroups 'Affiliate'
+//        includeGroups 'Offers'
 //    }
-                
+
     maxParallelForks = 4
     failFast = false
     forkEvery = 4
-    
+
     testLogging{
         events "PASSED", "FAILED", "SKIPPED"
         showStandardStreams = true
         exceptionFormat = 'full'
     }
-    
-    test.outputs.upToDateWhen{
-        false
-    }
+
+    test.outputs.upToDateWhen{ false }
+}
+
+allure{
+    version = '2.13.5'
+    autoconfigure = true
+    aspectjweaver = 'true'
+    configuration = 'compile'
 }

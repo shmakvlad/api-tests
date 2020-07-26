@@ -3,6 +3,7 @@ package com.affise.api.services;
 
 import com.affise.api.assertions.AssertableResponse;
 import com.affise.api.payloads.Go.Affiliates.AffiliateGo;
+import io.qameta.allure.Step;
 
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import static com.affise.api.constans.Constans.User.ADMIN;
 
 public class AffiliateApiService extends PhpApiService {
 
+    @Step("post create-affiliate request with payload")
     public AssertableResponse createAffiliate(Map affiliate) {
         return new AssertableResponse(setUp()
                 .header(API_KEY, ADMIN)

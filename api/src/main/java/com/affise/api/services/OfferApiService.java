@@ -2,6 +2,7 @@ package com.affise.api.services;
 
 import com.affise.api.assertions.AssertableResponse;
 import com.affise.api.payloads.Go.Offers.OfferGo;
+import io.qameta.allure.Step;
 
 import java.util.Map;
 
@@ -44,6 +45,7 @@ public class OfferApiService extends PhpApiService {
                 .when().post("/admin/offer/delete"));
     }
 
+    @Step("post create-offer request with payload")
     public AssertableResponse createGoOffer(OfferGo requestBody, String token) {
         return new AssertableResponse(goSetUp()
                 .header("Authorization", "Bearer " + token)

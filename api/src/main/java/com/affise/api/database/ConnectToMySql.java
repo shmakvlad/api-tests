@@ -1,6 +1,7 @@
 package com.affise.api.database;
 
 
+import io.qameta.allure.Step;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -48,7 +49,7 @@ public class ConnectToMySql {
         }
     }
 
-    @SneakyThrows
+    @SneakyThrows @Step
     public void deleteAffiliateFromMySql(int partnerId) {
         String query = "DELETE FROM partner WHERE id = " + partnerId;
         statement.executeUpdate(query);
@@ -64,16 +65,20 @@ public class ConnectToMySql {
         }
     }
 
-    @SneakyThrows
+    @SneakyThrows @Step
     public void existsInMySql(int partnerId) {
         String query = "SELECT EXISTS(SELECT id FROM partner WHERE id = " + partnerId + ")";
         resultSet = statement.executeQuery(query);
         resultSet.first();
         if (resultSet.getBoolean(1)) {
-            log.info("Affiliate {} exists in MySql", partnerId);
+            if (getConfig().logging()) {
+                log.info("Affiliate {} exists in MySql", partnerId);
+            }
         }
         else {
-            log.info("Affiliate {} not exists in MySql", partnerId);
+            if (getConfig().logging()) {
+                log.info("Affiliate {} not exists in MySql", partnerId);
+            }
             throw new IOException("affiliate not saved in MySql");
         }
     }

@@ -7,6 +7,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -74,12 +75,14 @@ public class ConnectToMongo {
         log.info("Affiliates {} successfully delete from MongoDB", email);
     }
 
+    @Step
     public void removeAffiliateById(Object id) {
         MongoCollection<Document> collection = mongoClient.getDatabase("admin").getCollection("partners");
         assertThat(collection.deleteOne(eq("_id", id)).getDeletedCount(), equalTo(1L));
         log.info("Affiliates {} successfully delete from MongoDB", id);
     }
 
+    @Step
     public void removeAffiliateByIdCentral(Object id) {
         MongoCollection<Document> collection = mongoClientAffiliates.getDatabase("affiliates").getCollection("affiliates");
         assertThat(collection.deleteOne(eq("id", id)).getDeletedCount(), equalTo(1L));
@@ -192,7 +195,7 @@ public class ConnectToMongo {
                 combine(set(updateKey, new ObjectId((String) updateValue))));
     }
 
-    @SneakyThrows
+    @SneakyThrows @Step
     public void existsAffiliateInCentralMongo(Integer partnerId){
         MongoCollection<Document> collection = mongoClientAffiliates.getDatabase("affiliates").getCollection("affiliates");
         if (collection.find(eq("id", partnerId)).first() != null){
@@ -203,7 +206,7 @@ public class ConnectToMongo {
         }
     }
 
-    @SneakyThrows
+    @SneakyThrows @Step
     public void existsAffiliateInMongo(Integer partnerId){
         FindIterable<Document> iterable = mongoClient.getDatabase("admin")
                 .getCollection("partners").find(new Document("_id", partnerId));
