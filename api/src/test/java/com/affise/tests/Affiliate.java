@@ -140,7 +140,7 @@ public class Affiliate {
 
 
     @SneakyThrows
-    @Test(description = "Can create affiliate with required fields")
+    @Test(description = "Can create affiliate with required fields", dependsOnGroups = {"Offer management"})
     public void createAffiliateJsonSimple() {
         JSONObject body = new JSONObject();
         body.put("email", generateEmail());

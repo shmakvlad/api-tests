@@ -16,13 +16,14 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.emptyOrNullString;
 import static org.hamcrest.Matchers.not;
 
+@Test(groups="Users")
 public class User {
 
     private final UserApiService userApiService = new UserApiService();
     private final AffiliateApiService affiliateApiService = new AffiliateApiService();
 
     @Positive
-    @Test(description = "Can create user with required fields", dependsOnGroups = {"Offer management"})
+    @Test(description = "Can create user with required fields")
     public void createUser() {
         // Data generation
         Map user = generateUserWithReqFields(ROLE_ADMIN);

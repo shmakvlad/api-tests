@@ -1,6 +1,7 @@
 package com.affise.api.services;
 
 import com.affise.api.assertions.AssertableResponse;
+import io.qameta.allure.Step;
 
 import java.util.Map;
 
@@ -16,6 +17,7 @@ public class UserApiService extends PhpApiService {
                 .when().post("/admin/user"));
     }
 
+    @Step
     public AssertableResponse createUser(Map user, String usertype) {
         return new AssertableResponse(setUp()
                 .header(API_KEY, usertype)

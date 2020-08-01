@@ -18,7 +18,6 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
     compile group: 'com.github.javafaker', name: 'javafaker', version: '0.18'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.11.0'
-
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
@@ -26,7 +25,9 @@ dependencies {
     compile group: 'com.github.docker-java', name: 'docker-java', version: '3.1.5'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
     compile group: 'org.mongojack', name: 'mongojack', version: '4.0.1'
+    
     compile group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.13.5'
+    compile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
 
 //    compile group: 'com.github.java-json-tools', name: 'json-schema-validator', version: '2.2.13'
 //    compile group: 'io.rest-assured', name: 'json-schema-validator', version: '3.0.0'
@@ -41,16 +42,21 @@ dependencies {
 test {
     useTestNG()
 
-//    dependsOn 'cleanTest'
-//    systemProperties System.getProperties()
+//    {
+//        includeGroups 'Users'
+//        excludeGroups 'Offers', 'Affiliate'
+//    }
 
+//    include '**/*User.class'
 //    include '**/*'
 //    include 'com/affise/tests/**'
 
-//    {
-//        includeGroups 'Affiliate'
-//        includeGroups 'Offers'
+//    filter {
+//        includeTestsMatching "com.affise.tests.User.*"
 //    }
+
+//    systemProperties System.getProperties()
+//    dependsOn 'cleanTest'
 
     maxParallelForks = 4
     failFast = false
