@@ -60,8 +60,4 @@ public class Config {
         return Collections.emptyList();
     }
 
-//            .setConfig(RestAssured.config.decoderConfig(decoderConfig().contentDecoders(DEFLATE, GZIP)))
-//            .setConfig(config().encoderConfig(encoderConfig().defaultContentCharset("US-ASCII")))
-//            .setConfig(config().decoderConfig(decoderConfig().defaultContentCharset("UTF-8")))
-
 }
