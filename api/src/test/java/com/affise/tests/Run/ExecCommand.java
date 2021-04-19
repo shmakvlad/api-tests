@@ -105,24 +105,4 @@ public class ExecCommand {
         }
     }
 
-    /* Awaitility
-    public static void makeClickAndConversion(ClickResponse makeClick) {
-        ClickResponse clickResponse = makeClick(makeClick, 5);
-
-        await("Wait when conversion on click should have status 1")
-            .given()
-                .ignoreExceptions()
-                .and()
-                .ignoreException(AssertionError.class)
-            .with()
-                .atMost(Duration.ofSeconds(5))
-                .pollDelay(Duration.ofMillis(200))
-                .pollInterval(Duration.ofMillis(200))
-            .then()
-                .until(() -> getConversionStatus(generateConversion(clickResponse)), equalTo(1));
-
-        System.out.println("Count of created conversions: " + ++conversionSuccessCounter);
-    }
-    */
-
 }
