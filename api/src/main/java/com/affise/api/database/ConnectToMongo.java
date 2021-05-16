@@ -234,4 +234,120 @@ public class ConnectToMongo {
                 .into(new ArrayList<>());
     }
 
+    ///-------------------------|   Helpers   |-------------------------///
+
+    public void distinct(String db, String collection, String key) {
+//        // 1
+//        List list = new ArrayList<String>();
+//        mongoClient.getDatabase(db).getCollection(collection).distinct(key, String.class).forEach(list::add);
+//        System.out.println(list);
+
+
+//        // 2
+//        List list1 = mongoClient.getDatabase(db).getCollection(collection).distinct(key, String.class).into(new ArrayList<>());
+//        System.out.println(list1); System.out.println(list1.get(0)); System.out.println(list1.get(list1.size()-1));
+
+
+//        // 3
+//        System.out.println(mongoClient.getDatabase(db).getCollection(collection).distinct(key, String.class).first());
+
+
+//        // 4
+//        for (String s : mongoClient.getDatabase(db).getCollection(collection).distinct(key, String.class)) {
+//            System.out.println(s);
+//        }
+
+
+//        // 5
+//        System.out.println(mongoClient.getDatabase(db).getCollection(collection).distinct(key, eq("title", "Kreiger - Harber"), String.class).first());
+
+
+//        // 6
+//        for (String s : mongoClient.getDatabase(db).getCollection(collection).distinct(key, eq("title", "test11151"), String.class)){
+//            System.out.println(s);
+//        }
+
+
+//        // 7
+//        mongoClient.getDatabase(db).getCollection(collection).distinct(key, String.class).filter(eq("title", "123")).first();
+
+
+//        // 8
+//        Bson bson = eq("title", "test11151");
+//        System.out.println(mongoClient.getDatabase(db).getCollection(collection).distinct(key, bson, String.class).into(new ArrayList<>()));
+//        System.out.println(mongoClient.getDatabase(db).getCollection(collection).distinct(key, bson, String.class).into(new ArrayList<>()).get(0));
+//        System.out.println(mongoClient.getDatabase(db).getCollection(collection).distinct(key, bson, String.class).first());
+
+
+//        // 9 ( Different filter types )
+
+          // Bson filter
+//        Bson bson = eq("title", "Kreiger - Harber");
+//        System.out.println("Bson filter: " + mongoClient.getDatabase(db).getCollection(collection).distinct(key, bson, String.class).first());
+
+          // Document filter
+//        Document document = new Document().append("title", "Kreiger - Harber");
+//        System.out.println("Document filter: " + mongoClient.getDatabase(db).getCollection(collection).distinct(key, document, String.class).first());
+
+          // BasicDBObject filter
+//        BasicDBObject query = new BasicDBObject("title", "Kreiger - Harber");
+//        System.out.println("BasicDBObject filter: " + mongoClient.getDatabase(db).getCollection(collection).distinct(key, query, String.class).first());
+
+
+          // 10 ObjectId
+//        for (ObjectId s : mongoClientLocal.getDatabase(db).getCollection(collection).distinct(key, ObjectId.class)){
+//            System.out.println(s);
+//        }
+
+    }
+
+    public void find(String db, String collection, String key) {
+//        // 1
+//        for (Document document : mongoClient.getDatabase(db).getCollection(collection).find(empty())){
+//            System.out.println(document);
+//        }
+
+
+//        // 2
+//        for (Document document : mongoClient.getDatabase(db).getCollection(collection).find()){
+//            System.out.println(document.toJson());
+//        }
+
+
+//        // 3
+//        List list = new ArrayList<String>();
+//        for (Document document : mongoClient.getDatabase(db).getCollection(collection).find()){
+
+//            // create collection
+//            list.add(document.getString("title"));
+
+//            // extract path
+//            try {
+//                Document path = (Document) document.get("sub_accounts");
+//                System.out.println(path.get("1"));
+//                System.out.println(path.toJson());
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+
+//            // other methods
+//            System.out.println(document.getInteger("shave.mode"));
+//            System.out.println(document.get("sub_accounts"));
+//            System.out.println(document.getObjectId("_id"));
+//            System.out.println(document.containsKey("tags"));
+//            System.out.println(document.containsValue("AG"));
+//            System.out.println(document.getBoolean("consider_personal_targeting_only"));
+//            System.out.println(document.entrySet());
+//            System.out.println(document.getDate("updated_at"));
+//            System.out.println(document.isEmpty());
+//            System.out.println(document.size());
+//            System.out.println(document.values());
+//        }
+//        System.out.println(list);
+
+
+//        // 4
+
+    }
+
 }
